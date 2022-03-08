@@ -1,4 +1,4 @@
-﻿namespace BasicFacebookFeatures
+﻿namespace B22_Ex01_Alex_324777424_Lior_208678425
 {
     partial class FormMain
     {
@@ -303,10 +303,10 @@
 
         }
 
-		#endregion
+        #endregion
 
-		private System.Windows.Forms.Button buttonLogin;
-		private System.Windows.Forms.Button buttonLogout;
+        private System.Windows.Forms.Button buttonLogin;
+        private System.Windows.Forms.Button buttonLogout;
         private System.Windows.Forms.PictureBox profilePictureBox;
         private System.Windows.Forms.Label nameLabel;
         private System.Windows.Forms.Label birthDateLabel;

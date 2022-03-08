@@ -89,8 +89,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DataFromFacebook.cs" />
-    <Compile Include="FacebookConnection.cs" />
     <Compile Include="FormMain.cs">
       <SubType>Form</SubType>
     </Compile>
