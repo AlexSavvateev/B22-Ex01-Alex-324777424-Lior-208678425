@@ -56,11 +56,12 @@ namespace BasicFacebookFeatures
             genderLabel.Text = string.Format("Gender: {0}", m_LoggedInUser.Gender);
             locationLabel.Text = string.Format("Location: {0}", m_LoggedInUser.Location.Name);
             buttonLogin.Text = string.Format("Logged in as {0}", m_LoggedInUser.FirstName);
-            fetchFeed();
-            fetchAlbums();
-            fetchEvents();
-            fetchGroups();
-            fetchLikedPages();
+            FetchFeed();
+            FetchAlbums();
+            FetchEvents();
+            FetchGroups();
+            FetchLikedPages();
+            FetchFriends();
         }
 
         private void buttonLogin_Click(object sender, EventArgs e)
@@ -76,7 +77,7 @@ namespace BasicFacebookFeatures
             buttonLogin.Text = "Login";
         }
 
-        private void fetchFeed()
+        private void FetchFeed()
         {
             feedListBox.Items.Clear();
             feedListBox.DisplayMember = "Name";
@@ -102,7 +103,7 @@ namespace BasicFacebookFeatures
             }
         }
 
-        private void fetchAlbums()
+        private void FetchAlbums()
         {
             albumsListBox.Items.Clear();
             albumsListBox.DisplayMember = "Name";
@@ -118,7 +119,7 @@ namespace BasicFacebookFeatures
             }
         }
 
-        private void fetchEvents()
+        private void FetchEvents()
         {
             eventsListBox.Items.Clear();
             eventsListBox.DisplayMember = "Name";
@@ -133,7 +134,7 @@ namespace BasicFacebookFeatures
             }
         }
 
-        private void fetchLikedPages()
+        private void FetchLikedPages()
         {
             likedPagesListBox.Items.Clear();
             likedPagesListBox.DisplayMember = "Name";
@@ -156,7 +157,7 @@ namespace BasicFacebookFeatures
             }
         }
 
-        private void fetchGroups()
+        private void FetchGroups()
         {
             groupsListBox.Items.Clear();
             groupsListBox.DisplayMember = "Name";
@@ -184,7 +185,7 @@ namespace BasicFacebookFeatures
             friendsListBox.Items.Clear();
             friendsListBox.DisplayMember = "Name";
 
-            foreach (FriendList friend in m_LoggedInUser.FriendLists)
+            foreach (User friend in m_LoggedInUser.Friends)
             {
                 friendsListBox.Items.Add(friend);
             }
