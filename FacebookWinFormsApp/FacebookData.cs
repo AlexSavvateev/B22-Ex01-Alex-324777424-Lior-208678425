@@ -5,41 +5,41 @@ using FacebookWrapper.ObjectModel;
 
 namespace B22_Ex01_Alex_324777424_Lior_208678425
 {
-    public partial class FormMain : Form
+    public class FacebookData
     {
-        public FormMain()
+        public User LoggedInUser { get; private set; }
+
+        public string AccesToken { get; private set; }
+
+        private LoginResult m_LoginResult;
+
+        public void LoginToFacebook()
         {
-            InitializeComponent();
-            FacebookWrapper.FacebookService.s_CollectionLimit = 100;
+            m_LoginResult = FacebookService.Login("743579109959282",
+                "public_profile",
+                 "email",
+                 "user_birthday",
+                 "user_age_range",
+                 "user_gender",
+                 "user_link",
+                 "user_tagged_places",
+                 "user_videos",
+                 "user_friends",
+                 "user_events",
+                 "user_likes",
+                 "user_location",
+                 "user_photos",
+                 "user_posts",
+                 "user_hometown");
+            setAccesTokenAndLoggedInUser();    
         }
 
-        User m_LoggedInUser;
-        LoginResult m_LoginResult;
-
-        private void loginAndInit()
+        private void setAccesTokenAndLoggedInUser()
         {
-            m_LoginResult = FacebookService.Login("743579109959282", 
-					"email",
-                    "public_profile",
-                    "user_age_range",
-                    "user_birthday",
-                    "user_events",
-                    "user_friends",
-                    "user_gender",
-                    "user_hometown",
-                    "user_likes",
-                    "user_link",
-                    "user_location",
-                    "user_photos",
-                    "user_posts",
-                    "user_videos",
-                    "pages_read_user_content",
-                    "pages_read_engagement");
-
             if (!string.IsNullOrEmpty(m_LoginResult.AccessToken))
             {
-                m_LoggedInUser = m_LoginResult.LoggedInUser;
-
+                LoggedInUser = m_LoginResult.LoggedInUser;
+                AccesToken = m_LoginResult.AccessToken;
                 FetchUserInfo();
             }
             else
@@ -50,7 +50,7 @@ namespace B22_Ex01_Alex_324777424_Lior_208678425
 
         private void FetchUserInfo()
         {
-            profilePictureBox.LoadAsync(m_LoggedInUser.PictureLargeURL);
+            profilePictureBox.LoadAsync(LoggedInUser.PictureLargeURL);
             nameLabel.Text = string.Format("Full Name: {0}", m_LoggedInUser.Name);
             birthDateLabel.Text = string.Format("Birthday: {0}", m_LoggedInUser.Birthday);
             genderLabel.Text = string.Format("Gender: {0}", m_LoggedInUser.Gender);
@@ -62,19 +62,6 @@ namespace B22_Ex01_Alex_324777424_Lior_208678425
             FetchGroups();
             FetchLikedPages();
             FetchFriends();
-        }
-
-        private void buttonLogin_Click(object sender, EventArgs e)
-        {
-            Clipboard.SetText("alex.savvateev@gmail.com"); 
-
-            loginAndInit();
-        }
-
-        private void buttonLogout_Click(object sender, EventArgs e)
-        {
-            FacebookService.LogoutWithUI();
-            buttonLogin.Text = "Login";
         }
 
         private void FetchFeed()
@@ -193,45 +180,6 @@ namespace B22_Ex01_Alex_324777424_Lior_208678425
             if (friendsListBox.Items.Count == 0)
             {
                 friendsListBox.Items.Add("No friends to retrieve");
-            }
-        }
-
-        private void feedListBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            displaySelectedPostFromFeed();
-            Post selectedPost = m_LoggedInUser.Posts[feedListBox.SelectedIndex];
-            commentsListBox.DisplayMember = "Message";
-            commentsListBox.DataSource = selectedPost.Comments;
-        }
-
-        private void displaySelectedPostFromFeed()
-        {
-            if (feedListBox.SelectedItems.Count == 1)
-            {
-                Post selectedPost = m_LoggedInUser.Posts[feedListBox.SelectedIndex];
-                if (selectedPost.PictureURL != null)
-                {
-                    feedPictureBox.Visible = true;
-                    feedPictureBox.LoadAsync(selectedPost.PictureURL);
-                    feedPictureBox.SizeMode = PictureBoxSizeMode.AutoSize;
-                }
-                else
-                {
-                    feedPictureBox.Visible = false;
-                }
-            }
-        }
-
-        private void postButton_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                Status postedStatus = m_LoggedInUser.PostStatus(postTextBox.Text);
-                MessageBox.Show("Status Posted! ID: " + postedStatus.Id);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
             }
         }
     }
