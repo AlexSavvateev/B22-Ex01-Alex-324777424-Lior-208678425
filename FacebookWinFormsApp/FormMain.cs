@@ -1,7 +1,7 @@
-﻿using System;
-using System.Windows.Forms;
-using FacebookWrapper;
+﻿using FacebookWrapper;
 using FacebookWrapper.ObjectModel;
+using System;
+using System.Windows.Forms;
 
 namespace B22_Ex01_Alex_324777424_Lior_208678425
 {
@@ -12,14 +12,13 @@ namespace B22_Ex01_Alex_324777424_Lior_208678425
             InitializeComponent();
             FacebookWrapper.FacebookService.s_CollectionLimit = 100;
         }
-
-        User m_LoggedInUser;
-        LoginResult m_LoginResult;
-
-        private void loginAndInit()
+        public string AccesToken { get; private set; }
+        private User LoggedInUser { get; set; }
+        private LoginResult LoginResult { get; set; }
+        public void LoginToFacebook()
         {
-            m_LoginResult = FacebookService.Login("743579109959282", 
-					"email",
+            LoginResult = FacebookService.Login("743579109959282",
+                    "email",
                     "public_profile",
                     "user_age_range",
                     "user_birthday",
@@ -32,207 +31,236 @@ namespace B22_Ex01_Alex_324777424_Lior_208678425
                     "user_location",
                     "user_photos",
                     "user_posts",
-                    "user_videos",
-                    "pages_read_user_content",
-                    "pages_read_engagement");
+                    "user_videos");
+            SetAccesTokenAndLoggedInUser();
+        }
 
-            if (!string.IsNullOrEmpty(m_LoginResult.AccessToken))
+        private void SetAccesTokenAndLoggedInUser()
+        {
+            if (!string.IsNullOrEmpty(LoginResult.AccessToken))
             {
-                m_LoggedInUser = m_LoginResult.LoggedInUser;
-
+                LoggedInUser = LoginResult.LoggedInUser;
+                AccesToken = LoginResult.AccessToken;
                 FetchUserInfo();
             }
             else
             {
-                MessageBox.Show(m_LoginResult.ErrorMessage, "Login Failed");
+                MessageBox.Show(LoginResult.ErrorMessage, "Login Failed");
             }
         }
 
         private void FetchUserInfo()
         {
-            profilePictureBox.LoadAsync(m_LoggedInUser.PictureLargeURL);
-            nameLabel.Text = string.Format("Full Name: {0}", m_LoggedInUser.Name);
-            birthDateLabel.Text = string.Format("Birthday: {0}", m_LoggedInUser.Birthday);
-            genderLabel.Text = string.Format("Gender: {0}", m_LoggedInUser.Gender);
-            locationLabel.Text = string.Format("Location: {0}", m_LoggedInUser.Location.Name);
-            buttonLogin.Text = string.Format("Logged in as {0}", m_LoggedInUser.FirstName);
-            FetchFeed();
-            FetchAlbums();
-            FetchEvents();
-            FetchGroups();
-            FetchLikedPages();
-            FetchFriends();
+            buttonLogin.Enabled = false;
+            buttonLogout.Enabled = true;
+            VisibleAllTrue();
+            profilePictureBox.LoadAsync(LoggedInUser.PictureLargeURL);
+            nameLabel.Text = string.Format("Full Name: {0}", LoggedInUser.Name);
+            birthDateLabel.Text = string.Format("Birthday: {0}", LoggedInUser.Birthday);
+            genderLabel.Text = string.Format("Gender: {0}", LoggedInUser.Gender);
+            locationLabel.Text = string.Format("Location: {0}", LoggedInUser.Location.Name);
+            buttonLogin.Text = string.Format("Logged in as {0} {1}", LoggedInUser.FirstName, LoggedInUser.LastName);
+            FacebookData fd = new FacebookData();
+            fd.FetchFeed(feedListBox, LoggedInUser);
+            fd.FetchAlbums(albumsListBox, LoggedInUser);
+            fd.FetchEvents(eventsListBox, LoggedInUser);
+            fd.FetchGroups(groupsListBox, LoggedInUser);
+            fd.FetchLikedPages(likedPagesListBox, LoggedInUser);
+            fd.FetchFriends(friendsListBox, LoggedInUser);
         }
 
-        private void buttonLogin_Click(object sender, EventArgs e)
+        private void ButtonLogin_Click(object sender, EventArgs e)
         {
-            Clipboard.SetText("alex.savvateev@gmail.com"); 
-
-            loginAndInit();
+            Clipboard.SetText("0507527525");
+            LoginToFacebook();
         }
 
-        private void buttonLogout_Click(object sender, EventArgs e)
+        private void ButtonLogout_Click(object sender, EventArgs e)
         {
             FacebookService.LogoutWithUI();
+            LogoutFromUser();
+        }
+
+        private void LogoutFromUser()
+        {
+            VisibleAllFalse();
+            commentsListBox.Items.Clear();
+            profilePictureBox.Image = null;
+            feedPictureBoxPosts.Image = null;
+            LoginResult = null;
+            LoggedInUser = null;
+            buttonLogin.Enabled = true;
+            buttonLogout.Enabled = false;
             buttonLogin.Text = "Login";
         }
 
-        private void FetchFeed()
+        public void VisibleAllTrue()
         {
-            feedListBox.Items.Clear();
-            feedListBox.DisplayMember = "Name";
-            foreach (Post post in m_LoggedInUser.NewsFeed)
-            {
-                if (post.Message != null)
-                {
-                    feedListBox.Items.Add(post.Message);
-                }
-                else if (post.Caption != null)
-                {
-                    feedListBox.Items.Add(post.Caption);
-                }
-                else
-                {
-                    feedListBox.Items.Add(string.Format("[{0}]", post.Type));
-                }
-            }
-
-            if (feedListBox.Items.Count == 0)
-            {
-                feedListBox.Items.Add("No Posts to retrieve");
-            }
+            eventsListBox.Visible = true;
+            commentsListBox.Visible = true;
+            feedListBox.Visible = true;
+            friendsListBox.Visible = true;
+            groupsListBox.Visible = true;
+            likedPagesListBox.Visible = true;
+            albumsListBox.Visible = true;
+            feedPictureBoxPosts.Visible = true;
+            albumsLabel.Visible = true;
+            commentsLabel.Visible = true;
+            eventsLabel.Visible = true;
+            FriendsListLabel.Visible = true;
+            likedPagesLabel.Visible = true;
+            locationLabel.Visible = true;
+            genderLabel.Visible = true;
+            groupsLabel.Visible = true;
+            birthDateLabel.Visible = true;
+            nameLabel.Visible = true;
+            postButton.Visible = true;
+            postTextBox.Visible = true;
         }
 
-        private void FetchAlbums()
+        public void VisibleAllFalse()
         {
-            albumsListBox.Items.Clear();
-            albumsListBox.DisplayMember = "Name";
-            foreach (Album album in m_LoggedInUser.Albums)
-            {
-                albumsListBox.Items.Add(album);
-                //album.ReFetch(DynamicWrapper.eLoadOptions.Full);
-            }
-
-            if (albumsListBox.Items.Count == 0)
-            {
-                albumsListBox.Items.Add("No Albums to retrieve");
-            }
+            eventsListBox.Visible = false;
+            commentsListBox.Visible = false;
+            feedListBox.Visible = false;
+            friendsListBox.Visible = false;
+            groupsListBox.Visible = false;
+            likedPagesListBox.Visible = false;
+            albumsListBox.Visible = false;
+            feedPictureBoxPosts.Visible = false;
+            birthDateLabel.Visible = false;
+            albumsLabel.Visible = false;
+            commentsLabel.Visible = false;
+            eventsLabel.Visible = false;
+            FriendsListLabel.Visible = false;
+            likedPagesLabel.Visible = false;
+            locationLabel.Visible = false;
+            genderLabel.Visible = false;
+            groupsLabel.Visible = false;
+            nameLabel.Visible = false;
+            postButton.Visible = false;
+            postTextBox.Visible = false;
         }
 
-        private void FetchEvents()
+        private void FeedListBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            eventsListBox.Items.Clear();
-            eventsListBox.DisplayMember = "Name";
-            foreach (Event fbEvent in m_LoggedInUser.Events)
-            {
-                eventsListBox.Items.Add(fbEvent);
-            }
-
-            if (eventsListBox.Items.Count == 0)
-            {
-                eventsListBox.Items.Add("No Events to retrieve");
-            }
-        }
-
-        private void FetchLikedPages()
-        {
-            likedPagesListBox.Items.Clear();
-            likedPagesListBox.DisplayMember = "Name";
-
-            try
-            {
-                foreach (Page page in m_LoggedInUser.LikedPages)
-                {
-                    likedPagesListBox.Items.Add(page);
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-
-            if (likedPagesListBox.Items.Count == 0)
-            {
-                likedPagesListBox.Items.Add("No liked pages to retrieve");
-            }
-        }
-
-        private void FetchGroups()
-        {
-            groupsListBox.Items.Clear();
-            groupsListBox.DisplayMember = "Name";
-
-            try
-            {
-                foreach (Group group in m_LoggedInUser.Groups)
-                {
-                    groupsListBox.Items.Add(group);
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-
-            if (groupsListBox.Items.Count == 0)
-            {
-                groupsListBox.Items.Add("No groups to retrieve");
-            }
-        }
-
-        private void FetchFriends()
-        {
-            friendsListBox.Items.Clear();
-            friendsListBox.DisplayMember = "Name";
-
-            foreach (User friend in m_LoggedInUser.Friends)
-            {
-                friendsListBox.Items.Add(friend);
-            }
-
-            if (friendsListBox.Items.Count == 0)
-            {
-                friendsListBox.Items.Add("No friends to retrieve");
-            }
-        }
-
-        private void feedListBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            displaySelectedPostFromFeed();
-            Post selectedPost = m_LoggedInUser.Posts[feedListBox.SelectedIndex];
+            DisplaySelectedPostFromFeed();
+            Post selectedPost = LoggedInUser.Posts[feedListBox.SelectedIndex];
             commentsListBox.DisplayMember = "Message";
             commentsListBox.DataSource = selectedPost.Comments;
         }
 
-        private void displaySelectedPostFromFeed()
+        private void DisplaySelectedPostFromFeed()
         {
             if (feedListBox.SelectedItems.Count == 1)
             {
-                Post selectedPost = m_LoggedInUser.Posts[feedListBox.SelectedIndex];
+                Post selectedPost = LoggedInUser.Posts[feedListBox.SelectedIndex];
                 if (selectedPost.PictureURL != null)
                 {
-                    feedPictureBox.Visible = true;
-                    feedPictureBox.LoadAsync(selectedPost.PictureURL);
-                    feedPictureBox.SizeMode = PictureBoxSizeMode.AutoSize;
+                    feedPictureBoxPosts.Visible = true;
+                    feedPictureBoxPosts.LoadAsync(selectedPost.PictureURL);
+                    feedPictureBoxPosts.SizeMode = PictureBoxSizeMode.StretchImage;
                 }
                 else
                 {
-                    feedPictureBox.Visible = false;
+                    feedPictureBoxPosts.Visible = false;
                 }
             }
         }
 
-        private void postButton_Click(object sender, EventArgs e)
+        private void PostButton_Click(object sender, EventArgs e)
         {
             try
             {
-                Status postedStatus = m_LoggedInUser.PostStatus(postTextBox.Text);
+                Status postedStatus = LoggedInUser.PostStatus(postTextBox.Text);
                 MessageBox.Show("Status Posted! ID: " + postedStatus.Id);
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
             }
+        }
+
+        private void albumsListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (albumsListBox.SelectedItems.Count == 1)
+            {
+                Album selectedAlbum = LoggedInUser.Albums[albumsListBox.SelectedIndex];
+                if (selectedAlbum.PictureAlbumURL != null)
+                {
+                    subjectPictureBox.Visible = true;
+                    subjectPictureBox.LoadAsync(selectedAlbum.PictureAlbumURL);
+                    subjectPictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
+                }
+                else
+                {
+                    subjectPictureBox.Visible = false;
+                }
+            }
+        }
+
+        private void groupsListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (groupsListBox.SelectedItems.Count == 1)
+            {
+                Group selectedGroup = LoggedInUser.Groups[groupsListBox.SelectedIndex];
+                if (selectedGroup.PictureNormalURL != null)
+                {
+                    subjectPictureBox.Visible = true;
+                    subjectPictureBox.LoadAsync(selectedGroup.PictureNormalURL);
+                    subjectPictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
+                }
+                else
+                {
+                    subjectPictureBox.Visible = false;
+                }
+            }
+        }
+
+        private void likedPagesListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (likedPagesListBox.SelectedItems.Count == 1)
+            {
+                Page selectedLikedPage = LoggedInUser.LikedPages[likedPagesListBox.SelectedIndex];
+                if (selectedLikedPage.PictureURL != null)
+                {
+                    subjectPictureBox.Visible = true;
+                    subjectPictureBox.LoadAsync(selectedLikedPage.PictureURL);
+                    subjectPictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
+                }
+                else
+                {
+                    subjectPictureBox.Visible = false;
+                }
+            }
+        }
+
+        protected void postTextBox_Focus(Object sender, EventArgs e)
+        {
+            postTextBox.Text = "";
+            postTextBox.ForeColor = System.Drawing.Color.Black;
+        }
+
+        private void postTextBox_Leave(object sender, EventArgs e)
+        {
+            if (postTextBox.Text.Trim() == "")
+            {
+                postTextBox.Text = "What do you want to share?";
+                postTextBox.ForeColor = System.Drawing.Color.LightGray;
+                postButton.Enabled = false;
+            }
+        }
+
+        private void FormMain_Load(object sender, EventArgs e)
+        {
+            postTextBox.GotFocus += new EventHandler(postTextBox_Focus);
+            postTextBox.ForeColor = System.Drawing.Color.LightGray;
+            postTextBox.Text = "What do you want to share?";
+        }
+
+        private void postTextBox_TextChanged(object sender, EventArgs e)
+        {
+            postButton.Enabled = true;
         }
     }
 }
