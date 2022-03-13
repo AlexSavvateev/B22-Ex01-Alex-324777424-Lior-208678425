@@ -7,14 +7,20 @@ namespace B22_Ex01_Alex_324777424_Lior_208678425
 {
     public partial class FormMain : Form
     {
+        FacebookData m_FacebookData = new FacebookData();
+
         public FormMain()
         {
             InitializeComponent();
             FacebookWrapper.FacebookService.s_CollectionLimit = 100;
         }
+
         public string AccesToken { get; private set; }
+
         private User LoggedInUser { get; set; }
+
         private LoginResult LoginResult { get; set; }
+
         public void LoginToFacebook()
         {
             LoginResult = FacebookService.Login("743579109959282",
@@ -60,18 +66,17 @@ namespace B22_Ex01_Alex_324777424_Lior_208678425
             genderLabel.Text = string.Format("Gender: {0}", LoggedInUser.Gender);
             locationLabel.Text = string.Format("Location: {0}", LoggedInUser.Location.Name);
             buttonLogin.Text = string.Format("Logged in as {0} {1}", LoggedInUser.FirstName, LoggedInUser.LastName);
-            FacebookData fd = new FacebookData();
-            fd.FetchFeed(feedListBox, LoggedInUser);
-            fd.FetchAlbums(albumsListBox, LoggedInUser);
-            fd.FetchEvents(eventsListBox, LoggedInUser);
-            fd.FetchGroups(groupsListBox, LoggedInUser);
-            fd.FetchLikedPages(likedPagesListBox, LoggedInUser);
-            fd.FetchFriends(friendsListBox, LoggedInUser);
+            m_FacebookData.FetchFeed(feedListBox, LoggedInUser);
+            m_FacebookData.FetchAlbums(albumsListBox, LoggedInUser);
+            m_FacebookData.FetchEvents(eventsListBox, LoggedInUser);
+            m_FacebookData.FetchGroups(groupsListBox, LoggedInUser);
+            m_FacebookData.FetchLikedPages(likedPagesListBox, LoggedInUser);
+            m_FacebookData.FetchFriends(friendsListBox, LoggedInUser);
         }
 
         private void ButtonLogin_Click(object sender, EventArgs e)
         {
-            Clipboard.SetText("0507527525");
+            Clipboard.SetText("alex.savvateev@gmail.com");
             LoginToFacebook();
         }
 
@@ -261,6 +266,18 @@ namespace B22_Ex01_Alex_324777424_Lior_208678425
         private void postTextBox_TextChanged(object sender, EventArgs e)
         {
             postButton.Enabled = true;
+        }
+
+        private void quizButton_Click(object sender, EventArgs e)
+        {
+            FormQuiz fromQuiz = new FormQuiz();
+            fromQuiz.ShowDialog();
+        }
+
+        private void searchButton_Click(object sender, EventArgs e)
+        {
+            FormSearch formSearch = new FormSearch();
+            formSearch.ShowDialog();
         }
     }
 }

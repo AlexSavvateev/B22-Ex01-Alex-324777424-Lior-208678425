@@ -55,6 +55,8 @@ namespace B22_Ex01_Alex_324777424_Lior_208678425
             this.postButton = new System.Windows.Forms.Button();
             this.FriendsListLabel = new System.Windows.Forms.Label();
             this.subjectPictureBox = new System.Windows.Forms.PictureBox();
+            this.quizButton = new System.Windows.Forms.Button();
+            this.searchButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.profilePictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mainLogoPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.feedPictureBoxPosts)).BeginInit();
@@ -225,11 +227,11 @@ namespace B22_Ex01_Alex_324777424_Lior_208678425
             // albumsLabel
             // 
             this.albumsLabel.AutoSize = true;
-            this.albumsLabel.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.albumsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.albumsLabel.Location = new System.Drawing.Point(1372, 183);
             this.albumsLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.albumsLabel.Name = "albumsLabel";
-            this.albumsLabel.Size = new System.Drawing.Size(77, 28);
+            this.albumsLabel.Size = new System.Drawing.Size(93, 29);
             this.albumsLabel.TabIndex = 66;
             this.albumsLabel.Text = "Albums";
             this.albumsLabel.Visible = false;
@@ -237,11 +239,11 @@ namespace B22_Ex01_Alex_324777424_Lior_208678425
             // groupsLabel
             // 
             this.groupsLabel.AutoSize = true;
-            this.groupsLabel.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupsLabel.Location = new System.Drawing.Point(1375, 384);
             this.groupsLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.groupsLabel.Name = "groupsLabel";
-            this.groupsLabel.Size = new System.Drawing.Size(74, 28);
+            this.groupsLabel.Size = new System.Drawing.Size(92, 29);
             this.groupsLabel.TabIndex = 67;
             this.groupsLabel.Text = "Groups";
             this.groupsLabel.Visible = false;
@@ -249,11 +251,11 @@ namespace B22_Ex01_Alex_324777424_Lior_208678425
             // likedPagesLabel
             // 
             this.likedPagesLabel.AutoSize = true;
-            this.likedPagesLabel.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.likedPagesLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.likedPagesLabel.Location = new System.Drawing.Point(1355, 602);
             this.likedPagesLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.likedPagesLabel.Name = "likedPagesLabel";
-            this.likedPagesLabel.Size = new System.Drawing.Size(116, 28);
+            this.likedPagesLabel.Size = new System.Drawing.Size(147, 29);
             this.likedPagesLabel.TabIndex = 68;
             this.likedPagesLabel.Text = "Liked Pages";
             this.likedPagesLabel.Visible = false;
@@ -261,11 +263,11 @@ namespace B22_Ex01_Alex_324777424_Lior_208678425
             // eventsLabel
             // 
             this.eventsLabel.AutoSize = true;
-            this.eventsLabel.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.eventsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.eventsLabel.Location = new System.Drawing.Point(1166, 602);
             this.eventsLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.eventsLabel.Name = "eventsLabel";
-            this.eventsLabel.Size = new System.Drawing.Size(73, 28);
+            this.eventsLabel.Size = new System.Drawing.Size(85, 29);
             this.eventsLabel.TabIndex = 69;
             this.eventsLabel.Text = "Events";
             this.eventsLabel.Visible = false;
@@ -294,11 +296,11 @@ namespace B22_Ex01_Alex_324777424_Lior_208678425
             // commentsLabel
             // 
             this.commentsLabel.AutoSize = true;
-            this.commentsLabel.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.commentsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.commentsLabel.Location = new System.Drawing.Point(239, 658);
             this.commentsLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.commentsLabel.Name = "commentsLabel";
-            this.commentsLabel.Size = new System.Drawing.Size(99, 28);
+            this.commentsLabel.Size = new System.Drawing.Size(129, 29);
             this.commentsLabel.TabIndex = 72;
             this.commentsLabel.Text = "Comments";
             this.commentsLabel.Visible = false;
@@ -311,9 +313,9 @@ namespace B22_Ex01_Alex_324777424_Lior_208678425
             this.postTextBox.Name = "postTextBox";
             this.postTextBox.Size = new System.Drawing.Size(623, 107);
             this.postTextBox.TabIndex = 73;
-            this.postTextBox.Leave += new System.EventHandler(this.postTextBox_Leave);
-            this.postTextBox.TextChanged += new System.EventHandler(this.postTextBox_TextChanged);
             this.postTextBox.Visible = false;
+            this.postTextBox.TextChanged += new System.EventHandler(this.postTextBox_TextChanged);
+            this.postTextBox.Leave += new System.EventHandler(this.postTextBox_Leave);
             // 
             // postButton
             // 
@@ -336,11 +338,11 @@ namespace B22_Ex01_Alex_324777424_Lior_208678425
             // FriendsListLabel
             // 
             this.FriendsListLabel.AutoSize = true;
-            this.FriendsListLabel.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FriendsListLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FriendsListLabel.Location = new System.Drawing.Point(1146, 383);
             this.FriendsListLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.FriendsListLabel.Name = "FriendsListLabel";
-            this.FriendsListLabel.Size = new System.Drawing.Size(118, 28);
+            this.FriendsListLabel.Size = new System.Drawing.Size(138, 29);
             this.FriendsListLabel.TabIndex = 75;
             this.FriendsListLabel.Text = "Friends List";
             this.FriendsListLabel.Visible = false;
@@ -355,11 +357,33 @@ namespace B22_Ex01_Alex_324777424_Lior_208678425
             this.subjectPictureBox.TabStop = false;
             this.subjectPictureBox.Visible = false;
             // 
+            // quizButton
+            // 
+            this.quizButton.Location = new System.Drawing.Point(1116, 19);
+            this.quizButton.Name = "quizButton";
+            this.quizButton.Size = new System.Drawing.Size(184, 88);
+            this.quizButton.TabIndex = 77;
+            this.quizButton.Text = "Quiz !";
+            this.quizButton.UseVisualStyleBackColor = true;
+            this.quizButton.Click += new System.EventHandler(this.quizButton_Click);
+            // 
+            // searchButton
+            // 
+            this.searchButton.Location = new System.Drawing.Point(1325, 20);
+            this.searchButton.Name = "searchButton";
+            this.searchButton.Size = new System.Drawing.Size(177, 87);
+            this.searchButton.TabIndex = 78;
+            this.searchButton.Text = "Search !";
+            this.searchButton.UseVisualStyleBackColor = true;
+            this.searchButton.Click += new System.EventHandler(this.searchButton_Click);
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1532, 803);
+            this.Controls.Add(this.searchButton);
+            this.Controls.Add(this.quizButton);
             this.Controls.Add(this.subjectPictureBox);
             this.Controls.Add(this.FriendsListLabel);
             this.Controls.Add(this.postButton);
@@ -426,6 +450,8 @@ namespace B22_Ex01_Alex_324777424_Lior_208678425
         private System.Windows.Forms.Button postButton;
         private System.Windows.Forms.Label FriendsListLabel;
         private System.Windows.Forms.PictureBox subjectPictureBox;
+        private System.Windows.Forms.Button quizButton;
+        private System.Windows.Forms.Button searchButton;
     }
 }
 
