@@ -1,6 +1,7 @@
 ﻿using FacebookWrapper;
 using FacebookWrapper.ObjectModel;
 using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace B22_Ex01_Alex_324777424_Lior_208678425
@@ -8,6 +9,7 @@ namespace B22_Ex01_Alex_324777424_Lior_208678425
     public partial class FormMain : Form
     {
         FacebookData m_FacebookData = new FacebookData();
+        private ListBox m_SearchListBoxToPass = new ListBox();
 
         public FormMain()
         {
@@ -66,12 +68,12 @@ namespace B22_Ex01_Alex_324777424_Lior_208678425
             genderLabel.Text = string.Format("Gender: {0}", LoggedInUser.Gender);
             locationLabel.Text = string.Format("Location: {0}", LoggedInUser.Location.Name);
             buttonLogin.Text = string.Format("Logged in as {0} {1}", LoggedInUser.FirstName, LoggedInUser.LastName);
-            m_FacebookData.FetchFeed(feedListBox, LoggedInUser);
-            m_FacebookData.FetchAlbums(albumsListBox, LoggedInUser);
-            m_FacebookData.FetchEvents(eventsListBox, LoggedInUser);
-            m_FacebookData.FetchGroups(groupsListBox, LoggedInUser);
-            m_FacebookData.FetchLikedPages(likedPagesListBox, LoggedInUser);
-            m_FacebookData.FetchFriends(friendsListBox, LoggedInUser);
+            m_FacebookData.FetchFeed(feedListBox, LoggedInUser, m_SearchListBoxToPass);
+            m_FacebookData.FetchAlbums(albumsListBox, LoggedInUser, m_SearchListBoxToPass);
+            m_FacebookData.FetchEvents(eventsListBox, LoggedInUser, m_SearchListBoxToPass);
+            m_FacebookData.FetchGroups(groupsListBox, LoggedInUser, m_SearchListBoxToPass);
+            m_FacebookData.FetchLikedPages(likedPagesListBox, LoggedInUser, m_SearchListBoxToPass);
+            m_FacebookData.FetchFriends(friendsListBox, LoggedInUser, m_SearchListBoxToPass);
         }
 
         private void ButtonLogin_Click(object sender, EventArgs e)
@@ -121,6 +123,8 @@ namespace B22_Ex01_Alex_324777424_Lior_208678425
             nameLabel.Visible = true;
             postButton.Visible = true;
             postTextBox.Visible = true;
+            searchButton.Visible = true;
+            quizButton.Visible = true;
         }
 
         public void VisibleAllFalse()
@@ -145,6 +149,8 @@ namespace B22_Ex01_Alex_324777424_Lior_208678425
             nameLabel.Visible = false;
             postButton.Visible = false;
             postTextBox.Visible = false;
+            searchButton.Visible = false;
+            quizButton.Visible = false;
         }
 
         private void FeedListBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -276,7 +282,7 @@ namespace B22_Ex01_Alex_324777424_Lior_208678425
 
         private void searchButton_Click(object sender, EventArgs e)
         {
-            FormSearch formSearch = new FormSearch();
+            FormSearch formSearch = new FormSearch(m_SearchListBoxToPass.Items);
             formSearch.ShowDialog();
         }
     }

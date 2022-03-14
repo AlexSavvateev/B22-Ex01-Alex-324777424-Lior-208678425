@@ -34,28 +34,32 @@
             // 
             // searchTextBox
             // 
-            this.searchTextBox.Location = new System.Drawing.Point(12, 12);
+            this.searchTextBox.Location = new System.Drawing.Point(9, 10);
+            this.searchTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.searchTextBox.Name = "searchTextBox";
-            this.searchTextBox.Size = new System.Drawing.Size(291, 22);
+            this.searchTextBox.Size = new System.Drawing.Size(219, 20);
             this.searchTextBox.TabIndex = 0;
+            this.searchTextBox.MouseClick += new System.Windows.Forms.MouseEventHandler(this.searchTextBox_MouseClick);
             this.searchTextBox.TextChanged += new System.EventHandler(this.searchTextBox_TextChanged);
             // 
             // searchResultsListBox
             // 
             this.searchResultsListBox.FormattingEnabled = true;
-            this.searchResultsListBox.ItemHeight = 16;
-            this.searchResultsListBox.Location = new System.Drawing.Point(12, 40);
+            this.searchResultsListBox.Location = new System.Drawing.Point(9, 32);
+            this.searchResultsListBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.searchResultsListBox.Name = "searchResultsListBox";
-            this.searchResultsListBox.Size = new System.Drawing.Size(291, 388);
+            this.searchResultsListBox.Size = new System.Drawing.Size(219, 316);
             this.searchResultsListBox.TabIndex = 1;
             // 
             // FormSearch
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackgroundImage = global::BasicFacebookFeatures.Properties.Resources.searching_ico;
+            this.ClientSize = new System.Drawing.Size(600, 366);
             this.Controls.Add(this.searchResultsListBox);
             this.Controls.Add(this.searchTextBox);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "FormSearch";
             this.Text = "FormSearch";
             this.ResumeLayout(false);

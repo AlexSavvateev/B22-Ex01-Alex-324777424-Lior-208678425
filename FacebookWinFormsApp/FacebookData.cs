@@ -7,7 +7,7 @@ namespace B22_Ex01_Alex_324777424_Lior_208678425
 {
     public class FacebookData
     {
-        public void FetchFeed(ListBox i_feedListBox, User i_LoggedInUser)
+        public void FetchFeed(ListBox i_feedListBox, User i_LoggedInUser, ListBox i_searchListBox)
         {
             i_feedListBox.Items.Clear();
             i_feedListBox.DisplayMember = "Name";
@@ -16,6 +16,7 @@ namespace B22_Ex01_Alex_324777424_Lior_208678425
                 if (post.Message != null)
                 {
                     i_feedListBox.Items.Add(post.Message);
+                    i_searchListBox.Items.Add(post.Message);
                 }
                 else if (post.Caption != null)
                 {
@@ -33,13 +34,14 @@ namespace B22_Ex01_Alex_324777424_Lior_208678425
             }
         }
 
-        public void FetchAlbums(ListBox i_albumsListBox, User i_LoggedInUser)
+        public void FetchAlbums(ListBox i_albumsListBox, User i_LoggedInUser, ListBox i_searchListBox)
         {
             i_albumsListBox.Items.Clear();
             i_albumsListBox.DisplayMember = "Name";
             foreach (Album album in i_LoggedInUser.Albums)
             {
                 i_albumsListBox.Items.Add(album);
+                i_searchListBox.Items.Add(album);
                 //album.ReFetch(DynamicWrapper.eLoadOptions.Full);
             }
 
@@ -49,13 +51,14 @@ namespace B22_Ex01_Alex_324777424_Lior_208678425
             }
         }
 
-        public void FetchEvents(ListBox i_EventsListBox, User i_LoggedInUser)
+        public void FetchEvents(ListBox i_EventsListBox, User i_LoggedInUser, ListBox i_searchListBox)
         {
             i_EventsListBox.Items.Clear();
             i_EventsListBox.DisplayMember = "Name";
             foreach (Event fbEvent in i_LoggedInUser.Events)
             {
                 i_EventsListBox.Items.Add(fbEvent);
+                i_searchListBox.Items.Add(fbEvent);
             }
 
             if (i_EventsListBox.Items.Count == 0)
@@ -64,7 +67,7 @@ namespace B22_Ex01_Alex_324777424_Lior_208678425
             }
         }
 
-        public void FetchLikedPages(ListBox i_likedPagesListBox, User i_LoggedInUser)
+        public void FetchLikedPages(ListBox i_likedPagesListBox, User i_LoggedInUser, ListBox i_searchListBox)
         {
             i_likedPagesListBox.Items.Clear();
             i_likedPagesListBox.DisplayMember = "Name";
@@ -74,6 +77,7 @@ namespace B22_Ex01_Alex_324777424_Lior_208678425
                 foreach (Page page in i_LoggedInUser.LikedPages)
                 {
                     i_likedPagesListBox.Items.Add(page);
+                    i_searchListBox.Items.Add(page);
                 }
             }
             catch (Exception ex)
@@ -87,7 +91,7 @@ namespace B22_Ex01_Alex_324777424_Lior_208678425
             }
         }
 
-        public void FetchGroups(ListBox i_groupsListBox, User i_LoggedInUser)
+        public void FetchGroups(ListBox i_groupsListBox, User i_LoggedInUser, ListBox i_searchListBox)
         {
             i_groupsListBox.Items.Clear();
             i_groupsListBox.DisplayMember = "Name";
@@ -97,6 +101,7 @@ namespace B22_Ex01_Alex_324777424_Lior_208678425
                 foreach (Group group in i_LoggedInUser.Groups)
                 {
                     i_groupsListBox.Items.Add(group);
+                    i_searchListBox.Items.Add(group);
                 }
             }
             catch (Exception ex)
@@ -110,7 +115,7 @@ namespace B22_Ex01_Alex_324777424_Lior_208678425
             }
         }
 
-        public void FetchFriends(ListBox i_friendsListBox, User i_LoggedInUser)
+        public void FetchFriends(ListBox i_friendsListBox, User i_LoggedInUser, ListBox i_searchListBox)
         {
             i_friendsListBox.Items.Clear();
             i_friendsListBox.DisplayMember = "Name";
@@ -118,6 +123,7 @@ namespace B22_Ex01_Alex_324777424_Lior_208678425
             foreach (User friend in i_LoggedInUser.Friends)
             {
                 i_friendsListBox.Items.Add(friend);
+                i_searchListBox.Items.Add(friend);
             }
 
             if (i_friendsListBox.Items.Count == 0)

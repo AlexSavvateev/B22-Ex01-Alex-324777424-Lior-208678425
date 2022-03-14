@@ -63,9 +63,39 @@ namespace BasicFacebookFeatures.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _3551576 {
+            get {
+                object obj = ResourceManager.GetObject("3551576", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _3887_8_searching_icon_iconbunny {
+            get {
+                object obj = ResourceManager.GetObject("3887.8-searching-icon-iconbunny", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Facebook_Logo {
             get {
                 object obj = ResourceManager.GetObject("Facebook_Logo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap searching_ico {
+            get {
+                object obj = ResourceManager.GetObject("searching-ico", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

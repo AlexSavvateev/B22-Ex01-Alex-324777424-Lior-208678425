@@ -115,6 +115,9 @@
     <EmbeddedResource Include="FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormQuiz.resx">
+      <DependentUpon>FormQuiz.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormSearch.resx">
       <DependentUpon>FormSearch.cs</DependentUpon>
     </EmbeddedResource>
@@ -144,6 +147,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="pics\Facebook_Logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pics\3887.8-searching-icon-iconbunny.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pics\searching-ico.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="pics\3551576.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

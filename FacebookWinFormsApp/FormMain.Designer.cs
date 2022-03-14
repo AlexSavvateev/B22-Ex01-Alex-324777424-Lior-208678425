@@ -67,10 +67,9 @@ namespace B22_Ex01_Alex_324777424_Lior_208678425
             // 
             this.buttonLogin.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonLogin.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.buttonLogin.Location = new System.Drawing.Point(16, 15);
-            this.buttonLogin.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonLogin.Location = new System.Drawing.Point(12, 12);
             this.buttonLogin.Name = "buttonLogin";
-            this.buttonLogin.Size = new System.Drawing.Size(239, 28);
+            this.buttonLogin.Size = new System.Drawing.Size(179, 23);
             this.buttonLogin.TabIndex = 36;
             this.buttonLogin.Text = "Login";
             this.buttonLogin.UseVisualStyleBackColor = true;
@@ -81,10 +80,9 @@ namespace B22_Ex01_Alex_324777424_Lior_208678425
             this.buttonLogout.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonLogout.Enabled = false;
             this.buttonLogout.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.buttonLogout.Location = new System.Drawing.Point(16, 50);
-            this.buttonLogout.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonLogout.Location = new System.Drawing.Point(12, 41);
             this.buttonLogout.Name = "buttonLogout";
-            this.buttonLogout.Size = new System.Drawing.Size(239, 28);
+            this.buttonLogout.Size = new System.Drawing.Size(179, 23);
             this.buttonLogout.TabIndex = 52;
             this.buttonLogout.Text = "Logout";
             this.buttonLogout.UseVisualStyleBackColor = true;
@@ -92,20 +90,18 @@ namespace B22_Ex01_Alex_324777424_Lior_208678425
             // 
             // profilePictureBox
             // 
-            this.profilePictureBox.Location = new System.Drawing.Point(13, 114);
-            this.profilePictureBox.Margin = new System.Windows.Forms.Padding(4);
+            this.profilePictureBox.Location = new System.Drawing.Point(10, 93);
             this.profilePictureBox.Name = "profilePictureBox";
-            this.profilePictureBox.Size = new System.Drawing.Size(239, 252);
+            this.profilePictureBox.Size = new System.Drawing.Size(179, 205);
             this.profilePictureBox.TabIndex = 53;
             this.profilePictureBox.TabStop = false;
             // 
             // nameLabel
             // 
             this.nameLabel.AutoSize = true;
-            this.nameLabel.Location = new System.Drawing.Point(13, 379);
-            this.nameLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.nameLabel.Location = new System.Drawing.Point(10, 308);
             this.nameLabel.Name = "nameLabel";
-            this.nameLabel.Size = new System.Drawing.Size(79, 17);
+            this.nameLabel.Size = new System.Drawing.Size(60, 13);
             this.nameLabel.TabIndex = 54;
             this.nameLabel.Text = "Full Name: ";
             this.nameLabel.Visible = false;
@@ -113,10 +109,9 @@ namespace B22_Ex01_Alex_324777424_Lior_208678425
             // birthDateLabel
             // 
             this.birthDateLabel.AutoSize = true;
-            this.birthDateLabel.Location = new System.Drawing.Point(13, 400);
-            this.birthDateLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.birthDateLabel.Location = new System.Drawing.Point(10, 325);
             this.birthDateLabel.Name = "birthDateLabel";
-            this.birthDateLabel.Size = new System.Drawing.Size(68, 17);
+            this.birthDateLabel.Size = new System.Drawing.Size(51, 13);
             this.birthDateLabel.TabIndex = 55;
             this.birthDateLabel.Text = "Birthday: ";
             this.birthDateLabel.Visible = false;
@@ -124,10 +119,9 @@ namespace B22_Ex01_Alex_324777424_Lior_208678425
             // genderLabel
             // 
             this.genderLabel.AutoSize = true;
-            this.genderLabel.Location = new System.Drawing.Point(13, 421);
-            this.genderLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.genderLabel.Location = new System.Drawing.Point(10, 342);
             this.genderLabel.Name = "genderLabel";
-            this.genderLabel.Size = new System.Drawing.Size(64, 17);
+            this.genderLabel.Size = new System.Drawing.Size(48, 13);
             this.genderLabel.TabIndex = 56;
             this.genderLabel.Text = "Gender: ";
             this.genderLabel.Visible = false;
@@ -135,10 +129,9 @@ namespace B22_Ex01_Alex_324777424_Lior_208678425
             // locationLabel
             // 
             this.locationLabel.AutoSize = true;
-            this.locationLabel.Location = new System.Drawing.Point(13, 442);
-            this.locationLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.locationLabel.Location = new System.Drawing.Point(10, 359);
             this.locationLabel.Name = "locationLabel";
-            this.locationLabel.Size = new System.Drawing.Size(70, 17);
+            this.locationLabel.Size = new System.Drawing.Size(54, 13);
             this.locationLabel.TabIndex = 57;
             this.locationLabel.Text = "Location: ";
             this.locationLabel.Visible = false;
@@ -146,11 +139,9 @@ namespace B22_Ex01_Alex_324777424_Lior_208678425
             // feedListBox
             // 
             this.feedListBox.FormattingEnabled = true;
-            this.feedListBox.ItemHeight = 16;
-            this.feedListBox.Location = new System.Drawing.Point(460, 405);
-            this.feedListBox.Margin = new System.Windows.Forms.Padding(4);
+            this.feedListBox.Location = new System.Drawing.Point(345, 329);
             this.feedListBox.Name = "feedListBox";
-            this.feedListBox.Size = new System.Drawing.Size(563, 244);
+            this.feedListBox.Size = new System.Drawing.Size(423, 199);
             this.feedListBox.TabIndex = 58;
             this.feedListBox.Visible = false;
             this.feedListBox.SelectedIndexChanged += new System.EventHandler(this.FeedListBox_SelectedIndexChanged);
@@ -158,11 +149,9 @@ namespace B22_Ex01_Alex_324777424_Lior_208678425
             // albumsListBox
             // 
             this.albumsListBox.FormattingEnabled = true;
-            this.albumsListBox.ItemHeight = 16;
-            this.albumsListBox.Location = new System.Drawing.Point(1325, 216);
-            this.albumsListBox.Margin = new System.Windows.Forms.Padding(4);
+            this.albumsListBox.Location = new System.Drawing.Point(994, 176);
             this.albumsListBox.Name = "albumsListBox";
-            this.albumsListBox.Size = new System.Drawing.Size(183, 164);
+            this.albumsListBox.Size = new System.Drawing.Size(138, 134);
             this.albumsListBox.TabIndex = 59;
             this.albumsListBox.Visible = false;
             this.albumsListBox.SelectedIndexChanged += new System.EventHandler(this.albumsListBox_SelectedIndexChanged);
@@ -170,22 +159,18 @@ namespace B22_Ex01_Alex_324777424_Lior_208678425
             // eventsListBox
             // 
             this.eventsListBox.FormattingEnabled = true;
-            this.eventsListBox.ItemHeight = 16;
-            this.eventsListBox.Location = new System.Drawing.Point(1116, 634);
-            this.eventsListBox.Margin = new System.Windows.Forms.Padding(4);
+            this.eventsListBox.Location = new System.Drawing.Point(837, 515);
             this.eventsListBox.Name = "eventsListBox";
-            this.eventsListBox.Size = new System.Drawing.Size(175, 164);
+            this.eventsListBox.Size = new System.Drawing.Size(132, 134);
             this.eventsListBox.TabIndex = 60;
             this.eventsListBox.Visible = false;
             // 
             // groupsListBox
             // 
             this.groupsListBox.FormattingEnabled = true;
-            this.groupsListBox.ItemHeight = 16;
-            this.groupsListBox.Location = new System.Drawing.Point(1325, 416);
-            this.groupsListBox.Margin = new System.Windows.Forms.Padding(4);
+            this.groupsListBox.Location = new System.Drawing.Point(994, 338);
             this.groupsListBox.Name = "groupsListBox";
-            this.groupsListBox.Size = new System.Drawing.Size(183, 180);
+            this.groupsListBox.Size = new System.Drawing.Size(138, 147);
             this.groupsListBox.TabIndex = 61;
             this.groupsListBox.Visible = false;
             this.groupsListBox.SelectedIndexChanged += new System.EventHandler(this.groupsListBox_SelectedIndexChanged);
@@ -193,11 +178,9 @@ namespace B22_Ex01_Alex_324777424_Lior_208678425
             // likedPagesListBox
             // 
             this.likedPagesListBox.FormattingEnabled = true;
-            this.likedPagesListBox.ItemHeight = 16;
-            this.likedPagesListBox.Location = new System.Drawing.Point(1325, 634);
-            this.likedPagesListBox.Margin = new System.Windows.Forms.Padding(4);
+            this.likedPagesListBox.Location = new System.Drawing.Point(994, 515);
             this.likedPagesListBox.Name = "likedPagesListBox";
-            this.likedPagesListBox.Size = new System.Drawing.Size(183, 164);
+            this.likedPagesListBox.Size = new System.Drawing.Size(138, 134);
             this.likedPagesListBox.TabIndex = 62;
             this.likedPagesListBox.Visible = false;
             this.likedPagesListBox.SelectedIndexChanged += new System.EventHandler(this.likedPagesListBox_SelectedIndexChanged);
@@ -205,21 +188,18 @@ namespace B22_Ex01_Alex_324777424_Lior_208678425
             // friendsListBox
             // 
             this.friendsListBox.FormattingEnabled = true;
-            this.friendsListBox.ItemHeight = 16;
-            this.friendsListBox.Location = new System.Drawing.Point(1116, 415);
-            this.friendsListBox.Margin = new System.Windows.Forms.Padding(4);
+            this.friendsListBox.Location = new System.Drawing.Point(837, 337);
             this.friendsListBox.Name = "friendsListBox";
-            this.friendsListBox.Size = new System.Drawing.Size(184, 180);
+            this.friendsListBox.Size = new System.Drawing.Size(139, 147);
             this.friendsListBox.TabIndex = 63;
             this.friendsListBox.Visible = false;
             // 
             // mainLogoPictureBox
             // 
             this.mainLogoPictureBox.Image = global::BasicFacebookFeatures.Properties.Resources.Facebook_Logo;
-            this.mainLogoPictureBox.Location = new System.Drawing.Point(383, 15);
-            this.mainLogoPictureBox.Margin = new System.Windows.Forms.Padding(4);
+            this.mainLogoPictureBox.Location = new System.Drawing.Point(287, 12);
             this.mainLogoPictureBox.Name = "mainLogoPictureBox";
-            this.mainLogoPictureBox.Size = new System.Drawing.Size(623, 92);
+            this.mainLogoPictureBox.Size = new System.Drawing.Size(467, 75);
             this.mainLogoPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.mainLogoPictureBox.TabIndex = 64;
             this.mainLogoPictureBox.TabStop = false;
@@ -228,10 +208,9 @@ namespace B22_Ex01_Alex_324777424_Lior_208678425
             // 
             this.albumsLabel.AutoSize = true;
             this.albumsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.albumsLabel.Location = new System.Drawing.Point(1372, 183);
-            this.albumsLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.albumsLabel.Location = new System.Drawing.Point(1029, 149);
             this.albumsLabel.Name = "albumsLabel";
-            this.albumsLabel.Size = new System.Drawing.Size(93, 29);
+            this.albumsLabel.Size = new System.Drawing.Size(74, 24);
             this.albumsLabel.TabIndex = 66;
             this.albumsLabel.Text = "Albums";
             this.albumsLabel.Visible = false;
@@ -240,10 +219,9 @@ namespace B22_Ex01_Alex_324777424_Lior_208678425
             // 
             this.groupsLabel.AutoSize = true;
             this.groupsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupsLabel.Location = new System.Drawing.Point(1375, 384);
-            this.groupsLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.groupsLabel.Location = new System.Drawing.Point(1031, 312);
             this.groupsLabel.Name = "groupsLabel";
-            this.groupsLabel.Size = new System.Drawing.Size(92, 29);
+            this.groupsLabel.Size = new System.Drawing.Size(72, 24);
             this.groupsLabel.TabIndex = 67;
             this.groupsLabel.Text = "Groups";
             this.groupsLabel.Visible = false;
@@ -252,10 +230,9 @@ namespace B22_Ex01_Alex_324777424_Lior_208678425
             // 
             this.likedPagesLabel.AutoSize = true;
             this.likedPagesLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.likedPagesLabel.Location = new System.Drawing.Point(1355, 602);
-            this.likedPagesLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.likedPagesLabel.Location = new System.Drawing.Point(1016, 489);
             this.likedPagesLabel.Name = "likedPagesLabel";
-            this.likedPagesLabel.Size = new System.Drawing.Size(147, 29);
+            this.likedPagesLabel.Size = new System.Drawing.Size(113, 24);
             this.likedPagesLabel.TabIndex = 68;
             this.likedPagesLabel.Text = "Liked Pages";
             this.likedPagesLabel.Visible = false;
@@ -264,20 +241,18 @@ namespace B22_Ex01_Alex_324777424_Lior_208678425
             // 
             this.eventsLabel.AutoSize = true;
             this.eventsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.eventsLabel.Location = new System.Drawing.Point(1166, 602);
-            this.eventsLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.eventsLabel.Location = new System.Drawing.Point(874, 489);
             this.eventsLabel.Name = "eventsLabel";
-            this.eventsLabel.Size = new System.Drawing.Size(85, 29);
+            this.eventsLabel.Size = new System.Drawing.Size(67, 24);
             this.eventsLabel.TabIndex = 69;
             this.eventsLabel.Text = "Events";
             this.eventsLabel.Visible = false;
             // 
             // feedPictureBoxPosts
             // 
-            this.feedPictureBoxPosts.Location = new System.Drawing.Point(244, 404);
-            this.feedPictureBoxPosts.Margin = new System.Windows.Forms.Padding(4);
+            this.feedPictureBoxPosts.Location = new System.Drawing.Point(183, 328);
             this.feedPictureBoxPosts.Name = "feedPictureBoxPosts";
-            this.feedPictureBoxPosts.Size = new System.Drawing.Size(208, 245);
+            this.feedPictureBoxPosts.Size = new System.Drawing.Size(156, 199);
             this.feedPictureBoxPosts.TabIndex = 70;
             this.feedPictureBoxPosts.TabStop = false;
             this.feedPictureBoxPosts.Visible = false;
@@ -285,11 +260,9 @@ namespace B22_Ex01_Alex_324777424_Lior_208678425
             // commentsListBox
             // 
             this.commentsListBox.FormattingEnabled = true;
-            this.commentsListBox.ItemHeight = 16;
-            this.commentsListBox.Location = new System.Drawing.Point(244, 690);
-            this.commentsListBox.Margin = new System.Windows.Forms.Padding(4);
+            this.commentsListBox.Location = new System.Drawing.Point(183, 561);
             this.commentsListBox.Name = "commentsListBox";
-            this.commentsListBox.Size = new System.Drawing.Size(779, 100);
+            this.commentsListBox.Size = new System.Drawing.Size(585, 82);
             this.commentsListBox.TabIndex = 71;
             this.commentsListBox.Visible = false;
             // 
@@ -297,21 +270,19 @@ namespace B22_Ex01_Alex_324777424_Lior_208678425
             // 
             this.commentsLabel.AutoSize = true;
             this.commentsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.commentsLabel.Location = new System.Drawing.Point(239, 658);
-            this.commentsLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.commentsLabel.Location = new System.Drawing.Point(179, 535);
             this.commentsLabel.Name = "commentsLabel";
-            this.commentsLabel.Size = new System.Drawing.Size(129, 29);
+            this.commentsLabel.Size = new System.Drawing.Size(101, 24);
             this.commentsLabel.TabIndex = 72;
             this.commentsLabel.Text = "Comments";
             this.commentsLabel.Visible = false;
             // 
             // postTextBox
             // 
-            this.postTextBox.Location = new System.Drawing.Point(383, 141);
-            this.postTextBox.Margin = new System.Windows.Forms.Padding(4);
+            this.postTextBox.Location = new System.Drawing.Point(287, 115);
             this.postTextBox.Multiline = true;
             this.postTextBox.Name = "postTextBox";
-            this.postTextBox.Size = new System.Drawing.Size(623, 107);
+            this.postTextBox.Size = new System.Drawing.Size(468, 88);
             this.postTextBox.TabIndex = 73;
             this.postTextBox.Visible = false;
             this.postTextBox.TextChanged += new System.EventHandler(this.postTextBox_TextChanged);
@@ -325,10 +296,9 @@ namespace B22_Ex01_Alex_324777424_Lior_208678425
             this.postButton.Enabled = false;
             this.postButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.postButton.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.postButton.Location = new System.Drawing.Point(540, 251);
-            this.postButton.Margin = new System.Windows.Forms.Padding(4);
+            this.postButton.Location = new System.Drawing.Point(405, 204);
             this.postButton.Name = "postButton";
-            this.postButton.Size = new System.Drawing.Size(301, 28);
+            this.postButton.Size = new System.Drawing.Size(226, 23);
             this.postButton.TabIndex = 74;
             this.postButton.Text = "Post";
             this.postButton.UseVisualStyleBackColor = false;
@@ -339,49 +309,51 @@ namespace B22_Ex01_Alex_324777424_Lior_208678425
             // 
             this.FriendsListLabel.AutoSize = true;
             this.FriendsListLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FriendsListLabel.Location = new System.Drawing.Point(1146, 383);
-            this.FriendsListLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.FriendsListLabel.Location = new System.Drawing.Point(860, 311);
             this.FriendsListLabel.Name = "FriendsListLabel";
-            this.FriendsListLabel.Size = new System.Drawing.Size(138, 29);
+            this.FriendsListLabel.Size = new System.Drawing.Size(106, 24);
             this.FriendsListLabel.TabIndex = 75;
             this.FriendsListLabel.Text = "Friends List";
             this.FriendsListLabel.Visible = false;
             // 
             // subjectPictureBox
             // 
-            this.subjectPictureBox.Location = new System.Drawing.Point(1116, 216);
-            this.subjectPictureBox.Margin = new System.Windows.Forms.Padding(4);
+            this.subjectPictureBox.Location = new System.Drawing.Point(837, 176);
             this.subjectPictureBox.Name = "subjectPictureBox";
-            this.subjectPictureBox.Size = new System.Drawing.Size(184, 164);
+            this.subjectPictureBox.Size = new System.Drawing.Size(138, 133);
             this.subjectPictureBox.TabIndex = 76;
             this.subjectPictureBox.TabStop = false;
             this.subjectPictureBox.Visible = false;
             // 
             // quizButton
             // 
-            this.quizButton.Location = new System.Drawing.Point(1116, 19);
+            this.quizButton.Location = new System.Drawing.Point(837, 15);
+            this.quizButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.quizButton.Name = "quizButton";
-            this.quizButton.Size = new System.Drawing.Size(184, 88);
+            this.quizButton.Size = new System.Drawing.Size(138, 72);
             this.quizButton.TabIndex = 77;
             this.quizButton.Text = "Quiz !";
             this.quizButton.UseVisualStyleBackColor = true;
+            this.quizButton.Visible = false;
             this.quizButton.Click += new System.EventHandler(this.quizButton_Click);
             // 
             // searchButton
             // 
-            this.searchButton.Location = new System.Drawing.Point(1325, 20);
+            this.searchButton.Location = new System.Drawing.Point(994, 16);
+            this.searchButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.searchButton.Name = "searchButton";
-            this.searchButton.Size = new System.Drawing.Size(177, 87);
+            this.searchButton.Size = new System.Drawing.Size(133, 71);
             this.searchButton.TabIndex = 78;
             this.searchButton.Text = "Search !";
             this.searchButton.UseVisualStyleBackColor = true;
+            this.searchButton.Visible = false;
             this.searchButton.Click += new System.EventHandler(this.searchButton_Click);
             // 
             // FormMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1532, 803);
+            this.ClientSize = new System.Drawing.Size(1149, 652);
             this.Controls.Add(this.searchButton);
             this.Controls.Add(this.quizButton);
             this.Controls.Add(this.subjectPictureBox);
@@ -409,7 +381,6 @@ namespace B22_Ex01_Alex_324777424_Lior_208678425
             this.Controls.Add(this.profilePictureBox);
             this.Controls.Add(this.buttonLogout);
             this.Controls.Add(this.buttonLogin);
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
