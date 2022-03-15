@@ -17,6 +17,7 @@
             {
                 components.Dispose();
             }
+
             base.Dispose(disposing);
         }
 
@@ -35,10 +36,11 @@
             // searchTextBox
             // 
             this.searchTextBox.Location = new System.Drawing.Point(9, 10);
-            this.searchTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.searchTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.searchTextBox.Name = "searchTextBox";
             this.searchTextBox.Size = new System.Drawing.Size(219, 20);
             this.searchTextBox.TabIndex = 0;
+            this.searchTextBox.Text = "Search for anything";
             this.searchTextBox.MouseClick += new System.Windows.Forms.MouseEventHandler(this.searchTextBox_MouseClick);
             this.searchTextBox.TextChanged += new System.EventHandler(this.searchTextBox_TextChanged);
             // 
@@ -46,7 +48,7 @@
             // 
             this.searchResultsListBox.FormattingEnabled = true;
             this.searchResultsListBox.Location = new System.Drawing.Point(9, 32);
-            this.searchResultsListBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.searchResultsListBox.Margin = new System.Windows.Forms.Padding(2);
             this.searchResultsListBox.Name = "searchResultsListBox";
             this.searchResultsListBox.Size = new System.Drawing.Size(219, 316);
             this.searchResultsListBox.TabIndex = 1;
@@ -59,7 +61,7 @@
             this.ClientSize = new System.Drawing.Size(600, 366);
             this.Controls.Add(this.searchResultsListBox);
             this.Controls.Add(this.searchTextBox);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormSearch";
             this.Text = "FormSearch";
             this.ResumeLayout(false);

@@ -8,11 +8,11 @@ namespace B22_Ex01_Alex_324777424_Lior_208678425
 {
     public class FacebookQuiz
     {
-        private User m_GuessingFriend;
-        private Random s_Random = new Random();
         private readonly int r_NumberOfWrongAnswers = 3;
-        private readonly List<string> r_RangeOfAges = new List<string> { "6/6/1996" , "12/3/1995" , "7/2/1994", "1/5/1997", "28/12/1998", "13/4/1995", "9/10/1994", "24/1/1993", "16/9/1999", "18/7/1996" , "22/2/1992" , "15/2/1999" };
+        private readonly List<string> r_RangeOfAges = new List<string> { "6/6/1996", "12/3/1995", "7/2/1994", "1/5/1997", "28/12/1998", "13/4/1995", "9/10/1994", "24/1/1993", "16/9/1999", "18/7/1996", "22/2/1992", "15/2/1999" };
         private readonly List<string> r_RangeOfCities = new List<string> { "חולון", "ראשון לציון", "בת ים", "תל אביב", "נס ציונה", "פתח תקווה", "ראש העין", "חיפה", "כפר קאסם", "אריאל", "אילת", "נהריה" };
+        private Random s_Random = new Random();
+        private User m_GuessingFriend;
 
         public User GuessingFriend { get => m_GuessingFriend; set => m_GuessingFriend = value; }
 
@@ -62,14 +62,14 @@ namespace B22_Ex01_Alex_324777424_Lior_208678425
         {
             List<string> answers = new List<string>();
             answers = GenerateAnswers(GuessingFriend.Birthday, r_RangeOfAges);
-            return (answers);
+            return answers;
         }
 
         public List<string> GetQuestionAnswersForCity()
         {
             List<string> answers = new List<string>();
             answers = GenerateAnswers(GuessingFriend.Location.Name, r_RangeOfCities);
-            return (answers);
+            return answers;
         }
 
         public User GetGuessingFriend(List<User> i_Friends)

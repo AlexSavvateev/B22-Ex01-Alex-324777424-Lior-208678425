@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="B22_Ex01_Alex_324777424_Lior_208678425.FacebookData">
+    <Position X="11" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAEAAAAAAAAgBAAAAAEEAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>FacebookData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="B22_Ex01_Alex_324777424_Lior_208678425.FacebookQuiz">
+    <Position X="13" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQBAQAAAAAACBAAAAAIAAAAAAAFIAAAAgAABAEAEAA=</HashCode>
+      <FileName>FacebookQuiz.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="B22_Ex01_Alex_324777424_Lior_208678425.FacebookSearch">
+    <Position X="11.75" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAgAAA=</HashCode>
+      <FileName>FacebookSearch.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="B22_Ex01_Alex_324777424_Lior_208678425.FormMain">
+    <Position X="4.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQEIAUoATCQyIoAAEA2JABBaKIQAxyoCMBEAMkAAAQQ=</HashCode>
+      <FileName>FormMain.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="B22_Ex01_Alex_324777424_Lior_208678425.FormQuiz">
+    <Position X="18" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAEAAACAQBAAgRACQAEACAAAAAAAAAQAgiAAhAAg=</HashCode>
+      <FileName>FormQuiz.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="B22_Ex01_Alex_324777424_Lior_208678425.FormSearch">
+    <Position X="15.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAASAAAABAIACAAAASABAAAAEAAAAAAAAAAAA=</HashCode>
+      <FileName>FormSearch.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="B22_Ex01_Alex_324777424_Lior_208678425.Program">
+    <Position X="9.5" Y="7.75" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

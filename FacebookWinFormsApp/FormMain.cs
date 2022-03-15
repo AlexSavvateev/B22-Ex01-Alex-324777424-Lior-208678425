@@ -1,14 +1,13 @@
-﻿using FacebookWrapper;
-using FacebookWrapper.ObjectModel;
-using System;
-using System.Collections.Generic;
+﻿using System;
 using System.Windows.Forms;
+using FacebookWrapper;
+using FacebookWrapper.ObjectModel;
 
 namespace B22_Ex01_Alex_324777424_Lior_208678425
 {
     public partial class FormMain : Form
     {
-        FacebookData m_FacebookData = new FacebookData();
+        private FacebookData m_FacebookData = new FacebookData();
         private ListBox m_SearchListBoxToPass = new ListBox();
 
         public FormMain()
@@ -25,7 +24,8 @@ namespace B22_Ex01_Alex_324777424_Lior_208678425
 
         public void LoginToFacebook()
         {
-            LoginResult = FacebookService.Login("743579109959282",
+            LoginResult = FacebookService.Login(
+                "743579109959282",
                     "email",
                     "public_profile",
                     "user_age_range",
@@ -246,15 +246,15 @@ namespace B22_Ex01_Alex_324777424_Lior_208678425
             }
         }
 
-        protected void postTextBox_Focus(Object sender, EventArgs e)
+        protected void postTextBox_Focus(object sender, EventArgs e)
         {
-            postTextBox.Text = "";
+            postTextBox.Text = string.Empty;
             postTextBox.ForeColor = System.Drawing.Color.Black;
         }
 
         private void postTextBox_Leave(object sender, EventArgs e)
         {
-            if (postTextBox.Text.Trim() == "")
+            if (postTextBox.Text.Trim() == string.Empty)
             {
                 postTextBox.Text = "What do you want to share?";
                 postTextBox.ForeColor = System.Drawing.Color.LightGray;

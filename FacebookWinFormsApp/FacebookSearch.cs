@@ -1,9 +1,6 @@
-﻿using FacebookWrapper.ObjectModel;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using FacebookWrapper.ObjectModel;
 
 namespace B22_Ex01_Alex_324777424_Lior_208678425
 {
@@ -17,7 +14,7 @@ namespace B22_Ex01_Alex_324777424_Lior_208678425
 			return searchResult;
 		}
 
-		private void SearchSomething(Object i_Obj, string i_SearchStr, List<string> i_SearchResult)
+		private void SearchSomething(object i_Obj, string i_SearchStr, List<string> i_SearchResult)
 		{
 			string newObj = null;
 			if (i_Obj != null)
@@ -26,22 +23,18 @@ namespace B22_Ex01_Alex_324777424_Lior_208678425
 				{
 					newObj = (i_Obj as Event).Name;
 				}
-
 				else if (i_Obj is User)
 				{
 					newObj = (i_Obj as User).Name;
 				}
-
 				else if (i_Obj is string)
 				{
-					newObj = (i_Obj as string);
+					newObj = i_Obj as string;
 				}
-
 				else if (i_Obj is Group)
 				{
 					newObj = (i_Obj as Group).Name;
 				}
-
 				else if (i_Obj is Status)
 				{
 					newObj = (i_Obj as Status).Message;
@@ -58,6 +51,7 @@ namespace B22_Ex01_Alex_324777424_Lior_208678425
 							i_SearchResult.Add(newObj.ToString().Substring(location, size));
 							location += size;
 						}
+
 						i_SearchResult.Add(newObj.ToString().Substring(location));
 						i_SearchResult.Add(Environment.NewLine);
 					}

@@ -42,7 +42,6 @@ namespace B22_Ex01_Alex_324777424_Lior_208678425
             {
                 i_albumsListBox.Items.Add(album);
                 i_searchListBox.Items.Add(album);
-                //album.ReFetch(DynamicWrapper.eLoadOptions.Full);
             }
 
             if (i_albumsListBox.Items.Count == 0)

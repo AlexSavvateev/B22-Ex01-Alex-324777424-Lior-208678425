@@ -19,6 +19,7 @@ namespace B22_Ex01_Alex_324777424_Lior_208678425
             {
                 components.Dispose();
             }
+
             base.Dispose(disposing);
         }
 
@@ -425,4 +426,3 @@ namespace B22_Ex01_Alex_324777424_Lior_208678425
         private System.Windows.Forms.Button searchButton;
     }
 }
-

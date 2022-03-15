@@ -14,7 +14,7 @@ namespace B22_Ex01_Alex_324777424_Lior_208678425
         [STAThread]
         static void Main()
         {
-            //Clipboard.SetText("design.patterns20cc");
+            Clipboard.SetText("design.patterns20cc");
             FacebookService.s_UseForamttedToStrings = true;
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);

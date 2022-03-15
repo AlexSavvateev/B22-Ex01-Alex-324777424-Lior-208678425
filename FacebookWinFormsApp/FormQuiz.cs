@@ -1,16 +1,16 @@
 ﻿using System;
-using FacebookWrapper;
-using FacebookWrapper.ObjectModel;
 using System.Windows.Forms;
 using System.Collections.Generic;
 using System.Linq;
+using FacebookWrapper;
+using FacebookWrapper.ObjectModel;
 
 namespace B22_Ex01_Alex_324777424_Lior_208678425
 {
     public partial class FormQuiz : Form
     {
-        private FacebookQuiz m_FacebookQuiz = new FacebookQuiz();
         private readonly int r_NumberOfQuestions = 2;
+        private FacebookQuiz m_FacebookQuiz = new FacebookQuiz();
         private int m_Score = 0;
 
         public FormQuiz(User i_LoggedInUser)
@@ -85,6 +85,7 @@ namespace B22_Ex01_Alex_324777424_Lior_208678425
             {
                 m_Score++;
             }
+
             if (m_FacebookQuiz.CheckIfCityAnswerIsCorrect(cityAnswer))
             {
                 m_Score++;
