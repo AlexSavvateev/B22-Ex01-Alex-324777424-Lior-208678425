@@ -276,7 +276,7 @@ namespace B22_Ex01_Alex_324777424_Lior_208678425
 
         private void quizButton_Click(object sender, EventArgs e)
         {
-            FormQuiz fromQuiz = new FormQuiz();
+            FormQuiz fromQuiz = new FormQuiz(LoggedInUser);
             fromQuiz.ShowDialog();
         }
 
