@@ -7,6 +7,31 @@ namespace B22_Ex01_Alex_324777424_Lior_208678425
 {
     public class FacebookData
     {
+        private LoggedInUser m_LoggedInUserControl = new LoggedInUser();
+
+        public string UserName()
+        {
+            return (m_LoggedInUserControl.GetUserInstance() == null || m_LoggedInUserControl.GetUserInstance().Name == null ? null : m_LoggedInUserControl.GetUserInstance().Name);
+        }
+
+        public string GetBirthday()
+        {
+            return (m_LoggedInUserControl.GetUserInstance() == null || m_LoggedInUserControl.GetUserInstance().Birthday == null ?
+                null : m_LoggedInUserControl.GetUserInstance().Birthday.Substring(3, 3) +
+                m_LoggedInUserControl.GetUserInstance().Birthday.Substring(0, 3) +
+                m_LoggedInUserControl.GetUserInstance().Birthday.Substring(6, 4));
+        }
+
+        public string GetGender()
+        {
+            return (m_LoggedInUserControl.GetUserInstance() == null || m_LoggedInUserControl.GetUserInstance().Gender == null ? null : m_LoggedInUserControl.GetUserInstance().Gender.ToString());
+        }
+
+        public string GetLocation()
+        {
+            return (m_LoggedInUserControl.GetUserInstance() == null || m_LoggedInUserControl.GetUserInstance().Location == null ? null : m_LoggedInUserControl.GetUserInstance().Location.Name);
+        }
+
         public void FetchFeed(ListBox i_feedListBox, User i_LoggedInUser, ListBox i_searchListBox)
         {
             i_feedListBox.Items.Clear();

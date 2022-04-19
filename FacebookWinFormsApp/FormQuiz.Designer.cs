@@ -29,7 +29,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.fetchedFriendsPictureBox = new System.Windows.Forms.PictureBox();
+            this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.Label emailLabel;
+            System.Windows.Forms.Label nameLabel;
             this.questionGroupBox2 = new System.Windows.Forms.GroupBox();
             this.answer4RadioButtonQuestion2 = new System.Windows.Forms.RadioButton();
             this.answer3RadioButtonQuestion2 = new System.Windows.Forms.RadioButton();
@@ -41,18 +43,19 @@
             this.answer2RadioButtonQuestion1 = new System.Windows.Forms.RadioButton();
             this.answer1RadioButtonQuestion1 = new System.Windows.Forms.RadioButton();
             this.submitButton = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.fetchedFriendsPictureBox)).BeginInit();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.userBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.emailLabel1 = new System.Windows.Forms.Label();
+            this.imageNormalPictureBox = new System.Windows.Forms.PictureBox();
+            this.nameLabel1 = new System.Windows.Forms.Label();
+            emailLabel = new System.Windows.Forms.Label();
+            nameLabel = new System.Windows.Forms.Label();
             this.questionGroupBox2.SuspendLayout();
             this.questionGroupBox1.SuspendLayout();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imageNormalPictureBox)).BeginInit();
             this.SuspendLayout();
-            // 
-            // fetchedFriendsPictureBox
-            // 
-            this.fetchedFriendsPictureBox.Location = new System.Drawing.Point(495, 12);
-            this.fetchedFriendsPictureBox.Name = "fetchedFriendsPictureBox";
-            this.fetchedFriendsPictureBox.Size = new System.Drawing.Size(293, 426);
-            this.fetchedFriendsPictureBox.TabIndex = 0;
-            this.fetchedFriendsPictureBox.TabStop = false;
             // 
             // questionGroupBox2
             // 
@@ -180,30 +183,92 @@
             this.submitButton.UseVisualStyleBackColor = true;
             this.submitButton.Click += new System.EventHandler(this.submitButton_Click);
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(emailLabel);
+            this.panel1.Controls.Add(this.emailLabel1);
+            this.panel1.Controls.Add(this.imageNormalPictureBox);
+            this.panel1.Controls.Add(nameLabel);
+            this.panel1.Controls.Add(this.nameLabel1);
+            this.panel1.Location = new System.Drawing.Point(368, 12);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(173, 155);
+            this.panel1.TabIndex = 4;
+            // 
+            // userBindingSource
+            // 
+            this.userBindingSource.DataSource = typeof(FacebookWrapper.ObjectModel.User);
+            // 
+            // emailLabel
+            // 
+            emailLabel.AutoSize = true;
+            emailLabel.Location = new System.Drawing.Point(21, 125);
+            emailLabel.Name = "emailLabel";
+            emailLabel.Size = new System.Drawing.Size(35, 13);
+            emailLabel.TabIndex = 0;
+            emailLabel.Text = "Email:";
+            // 
+            // emailLabel1
+            // 
+            this.emailLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.userBindingSource, "Email", true));
+            this.emailLabel1.Location = new System.Drawing.Point(60, 125);
+            this.emailLabel1.Name = "emailLabel1";
+            this.emailLabel1.Size = new System.Drawing.Size(100, 23);
+            this.emailLabel1.TabIndex = 1;
+            this.emailLabel1.Text = "label1";
+            // 
+            // imageNormalPictureBox
+            // 
+            this.imageNormalPictureBox.DataBindings.Add(new System.Windows.Forms.Binding("Image", this.userBindingSource, "ImageNormal", true));
+            this.imageNormalPictureBox.Location = new System.Drawing.Point(17, 4);
+            this.imageNormalPictureBox.Name = "imageNormalPictureBox";
+            this.imageNormalPictureBox.Size = new System.Drawing.Size(100, 91);
+            this.imageNormalPictureBox.TabIndex = 3;
+            this.imageNormalPictureBox.TabStop = false;
+            // 
+            // nameLabel
+            // 
+            nameLabel.AutoSize = true;
+            nameLabel.Location = new System.Drawing.Point(21, 102);
+            nameLabel.Name = "nameLabel";
+            nameLabel.Size = new System.Drawing.Size(38, 13);
+            nameLabel.TabIndex = 4;
+            nameLabel.Text = "Name:";
+            // 
+            // nameLabel1
+            // 
+            this.nameLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.userBindingSource, "Name", true));
+            this.nameLabel1.Location = new System.Drawing.Point(60, 102);
+            this.nameLabel1.Name = "nameLabel1";
+            this.nameLabel1.Size = new System.Drawing.Size(100, 23);
+            this.nameLabel1.TabIndex = 5;
+            this.nameLabel1.Text = "label1";
+            // 
             // FormQuiz
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::BasicFacebookFeatures.Properties.Resources._3551576;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(578, 476);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.submitButton);
             this.Controls.Add(this.questionGroupBox1);
             this.Controls.Add(this.questionGroupBox2);
-            this.Controls.Add(this.fetchedFriendsPictureBox);
             this.Name = "FormQuiz";
             this.Text = "FormQuiz";
-            ((System.ComponentModel.ISupportInitialize)(this.fetchedFriendsPictureBox)).EndInit();
             this.questionGroupBox2.ResumeLayout(false);
             this.questionGroupBox2.PerformLayout();
             this.questionGroupBox1.ResumeLayout(false);
             this.questionGroupBox1.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imageNormalPictureBox)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.PictureBox fetchedFriendsPictureBox;
         private System.Windows.Forms.GroupBox questionGroupBox2;
         private System.Windows.Forms.RadioButton answer4RadioButtonQuestion2;
         private System.Windows.Forms.RadioButton answer3RadioButtonQuestion2;
@@ -215,5 +280,10 @@
         private System.Windows.Forms.RadioButton answer2RadioButtonQuestion1;
         private System.Windows.Forms.RadioButton answer1RadioButtonQuestion1;
         private System.Windows.Forms.Button submitButton;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.BindingSource userBindingSource;
+        private System.Windows.Forms.Label emailLabel1;
+        private System.Windows.Forms.PictureBox imageNormalPictureBox;
+        private System.Windows.Forms.Label nameLabel1;
     }
 }

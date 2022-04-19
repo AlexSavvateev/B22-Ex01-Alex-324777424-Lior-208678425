@@ -31,10 +31,11 @@ namespace B22_Ex01_Alex_324777424_Lior_208678425
             }
             else
             {
-                fetchedFriendsPictureBox.Image = randomFetchedFriend.ImageNormal;
-                fetchedFriendsPictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
+                //fetchedFriendsPictureBox.Image = randomFetchedFriend.ImageNormal;
+                //fetchedFriendsPictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
                 SetGroupBoxHeadlines();
                 SetQuizQuestions(randomFetchedFriend);
+                userBindingSource.DataSource = randomFetchedFriend;
             }
         }
 

@@ -7,11 +7,14 @@ namespace B22_Ex01_Alex_324777424_Lior_208678425
 {
     public partial class FormMain : Form
     {
+        private LoggedInUser m_LoggedInUserControl = new LoggedInUser();
         private FacebookData m_FacebookData = new FacebookData();
         private ListBox m_SearchListBoxToPass = new ListBox();
+        private FacebookDataFacade m_FacebookDataFacade;
 
         public FormMain()
         {
+            m_FacebookDataFacade = FacebookDataFacade.GetInstance;
             InitializeComponent();
             FacebookWrapper.FacebookService.s_CollectionLimit = 100;
         }
@@ -40,6 +43,7 @@ namespace B22_Ex01_Alex_324777424_Lior_208678425
                     "user_photos",
                     "user_posts",
                     "user_videos");
+            m_LoggedInUserControl.SetUser(LoginResult.LoggedInUser);
             SetAccesTokenAndLoggedInUser();
         }
 
@@ -63,10 +67,14 @@ namespace B22_Ex01_Alex_324777424_Lior_208678425
             buttonLogout.Enabled = true;
             VisibleAllTrue();
             profilePictureBox.LoadAsync(LoggedInUser.PictureLargeURL);
-            nameLabel.Text = string.Format("Full Name: {0}", LoggedInUser.Name);
-            birthDateLabel.Text = string.Format("Birthday: {0}", LoggedInUser.Birthday);
-            genderLabel.Text = string.Format("Gender: {0}", LoggedInUser.Gender);
-            locationLabel.Text = string.Format("Location: {0}", LoggedInUser.Location.Name);
+            //nameLabel.Text = string.Format("Full Name: {0}", LoggedInUser.Name);
+            nameLabel.Text = m_FacebookDataFacade.Name;
+            //birthDateLabel.Text = string.Format("Birthday: {0}", LoggedInUser.Birthday);
+            birthDateLabel.Text = m_FacebookDataFacade.Birthday;
+            //genderLabel.Text = string.Format("Gender: {0}", LoggedInUser.Gender);
+            genderLabel.Text = m_FacebookDataFacade.Gender;
+            //locationLabel.Text = string.Format("Location: {0}", LoggedInUser.Location.Name);
+            locationLabel.Text = m_FacebookDataFacade.Location;
             buttonLogin.Text = string.Format("Logged in as {0} {1}", LoggedInUser.FirstName, LoggedInUser.LastName);
             m_FacebookData.FetchFeed(feedListBox, LoggedInUser, m_SearchListBoxToPass);
             m_FacebookData.FetchAlbums(albumsListBox, LoggedInUser, m_SearchListBoxToPass);
