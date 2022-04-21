@@ -1,7 +1,8 @@
-﻿using System;
-using System.Windows.Forms;
-using FacebookWrapper;
+﻿using FacebookWrapper;
 using FacebookWrapper.ObjectModel;
+using System;
+using System.Threading;
+using System.Windows.Forms;
 
 namespace B22_Ex01_Alex_324777424_Lior_208678425
 {
@@ -53,7 +54,8 @@ namespace B22_Ex01_Alex_324777424_Lior_208678425
             {
                 LoggedInUser = LoginResult.LoggedInUser;
                 AccesToken = LoginResult.AccessToken;
-                FetchUserInfo();
+                new Thread(() => FetchUserInfo()).Start();
+
             }
             else
             {
@@ -63,15 +65,24 @@ namespace B22_Ex01_Alex_324777424_Lior_208678425
 
         private void FetchUserInfo()
         {
-            buttonLogin.Enabled = false;
-            buttonLogout.Enabled = true;
-            VisibleAllTrue();
-            profilePictureBox.LoadAsync(LoggedInUser.PictureLargeURL);
-            nameLabel.Text = m_FacebookDataFacade.Name;
-            birthDateLabel.Text = m_FacebookDataFacade.Birthday;
-            genderLabel.Text = m_FacebookDataFacade.Gender;
-            locationLabel.Text = m_FacebookDataFacade.Location;
-            buttonLogin.Text = string.Format("Logged in as {0} {1}", LoggedInUser.FirstName, LoggedInUser.LastName);
+            buttonLogin.Invoke(new Action(() => buttonLogin.Enabled = false));
+            //buttonLogin.Enabled = false;
+            buttonLogout.Invoke(new Action(() => buttonLogin.Enabled = true));
+            //buttonLogout.Enabled = true;
+            this.Invoke(new Action(() => VisibleAllTrue()));
+            //VisibleAllTrue();
+            profilePictureBox.Invoke(new Action(() => profilePictureBox.LoadAsync(LoggedInUser.PictureLargeURL)));
+            //profilePictureBox.LoadAsync(LoggedInUser.PictureLargeURL);
+            nameLabel.Invoke(new Action(() => nameLabel.Text = m_FacebookDataFacade.Name));
+            //nameLabel.Text = m_FacebookDataFacade.Name;
+            birthDateLabel.Invoke(new Action(() => birthDateLabel.Text = m_FacebookDataFacade.Birthday));
+            //birthDateLabel.Text = m_FacebookDataFacade.Birthday;
+            genderLabel.Invoke(new Action(() => genderLabel.Text = m_FacebookDataFacade.Gender));
+            //genderLabel.Text = m_FacebookDataFacade.Gender;
+            locationLabel.Invoke(new Action(() => locationLabel.Text = m_FacebookDataFacade.Location));
+            //locationLabel.Text = m_FacebookDataFacade.Location;
+            buttonLogin.Invoke(new Action(() => buttonLogin.Text = string.Format("Logged in as {0} {1}", LoggedInUser.FirstName, LoggedInUser.LastName)));
+            //buttonLogin.Text = string.Format("Logged in as {0} {1}", LoggedInUser.FirstName, LoggedInUser.LastName);
             m_FacebookDataFacade.GetUserDataCollections(feedListBox, albumsListBox, eventsListBox, groupsListBox, likedPagesListBox, friendsListBox, LoggedInUser, m_SearchListBoxToPass);
         }
 

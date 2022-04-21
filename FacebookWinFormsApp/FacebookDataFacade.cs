@@ -1,4 +1,5 @@
 ﻿using FacebookWrapper.ObjectModel;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace B22_Ex01_Alex_324777424_Lior_208678425
@@ -48,12 +49,19 @@ namespace B22_Ex01_Alex_324777424_Lior_208678425
 
         public void GetUserDataCollections(ListBox i_FeedListBox, ListBox i_AlbumsListBox, ListBox i_EventsListBox, ListBox i_GroupsListBox, ListBox i_LikedPagesListBox, ListBox i_FriendsListBox, User i_LoggedInUser, ListBox i_searchListBox)
         {
-            m_FacebookData.FetchFeed(i_FeedListBox, i_LoggedInUser, i_searchListBox);
-            m_FacebookData.FetchAlbums(i_AlbumsListBox, i_LoggedInUser, i_searchListBox);
-            m_FacebookData.FetchEvents(i_EventsListBox, i_LoggedInUser, i_searchListBox);
-            m_FacebookData.FetchGroups(i_GroupsListBox, i_LoggedInUser, i_searchListBox);
-            m_FacebookData.FetchLikedPages(i_LikedPagesListBox, i_LoggedInUser, i_searchListBox);
-            m_FacebookData.FetchFriends(i_FriendsListBox, i_LoggedInUser, i_searchListBox);
+            //m_FacebookData.FetchFeed(i_FeedListBox, i_LoggedInUser, i_searchListBox);
+            //m_FacebookData.FetchAlbums(i_AlbumsListBox, i_LoggedInUser, i_searchListBox);
+            //m_FacebookData.FetchEvents(i_EventsListBox, i_LoggedInUser, i_searchListBox);
+            //m_FacebookData.FetchGroups(i_GroupsListBox, i_LoggedInUser, i_searchListBox);
+            //m_FacebookData.FetchLikedPages(i_LikedPagesListBox, i_LoggedInUser, i_searchListBox);
+            //m_FacebookData.FetchFriends(i_FriendsListBox, i_LoggedInUser, i_searchListBox);
+
+            new Thread(() => m_FacebookData.FetchFeed(i_FeedListBox, i_LoggedInUser, i_searchListBox)).Start();
+            new Thread(() => m_FacebookData.FetchAlbums(i_AlbumsListBox, i_LoggedInUser, i_searchListBox)).Start();
+            new Thread(() => m_FacebookData.FetchEvents(i_EventsListBox, i_LoggedInUser, i_searchListBox)).Start();
+            new Thread(() => m_FacebookData.FetchGroups(i_GroupsListBox, i_LoggedInUser, i_searchListBox)).Start();
+            new Thread(() => m_FacebookData.FetchLikedPages(i_LikedPagesListBox, i_LoggedInUser, i_searchListBox)).Start();
+            new Thread(() => m_FacebookData.FetchFriends(i_FriendsListBox, i_LoggedInUser, i_searchListBox)).Start();
         }
     }
 }
