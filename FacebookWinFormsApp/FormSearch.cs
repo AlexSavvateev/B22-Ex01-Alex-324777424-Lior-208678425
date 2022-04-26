@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 
-namespace B22_Ex01_Alex_324777424_Lior_208678425
+namespace B22_Ex02_Alex_324777424_Lior_208678425
 {
     public partial class FormSearch : Form
     {

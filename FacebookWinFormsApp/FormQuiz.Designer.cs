@@ -1,6 +1,6 @@
-﻿namespace B22_Ex01_Alex_324777424_Lior_208678425
+﻿namespace B22_Ex02_Alex_324777424_Lior_208678425
 {
-    partial class FormQuiz
+    public partial class FormQuiz
     {
         /// <summary>
         /// Required designer variable.
@@ -44,10 +44,11 @@
             this.answer1RadioButtonQuestion1 = new System.Windows.Forms.RadioButton();
             this.submitButton = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.userBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.emailLabel1 = new System.Windows.Forms.Label();
+            this.userBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.imageNormalPictureBox = new System.Windows.Forms.PictureBox();
             this.nameLabel1 = new System.Windows.Forms.Label();
+            this.LogedInUserLabel = new System.Windows.Forms.Label();
             emailLabel = new System.Windows.Forms.Label();
             nameLabel = new System.Windows.Forms.Label();
             this.questionGroupBox2.SuspendLayout();
@@ -56,6 +57,24 @@
             ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageNormalPictureBox)).BeginInit();
             this.SuspendLayout();
+            // 
+            // emailLabel
+            // 
+            emailLabel.AutoSize = true;
+            emailLabel.Location = new System.Drawing.Point(21, 125);
+            emailLabel.Name = "emailLabel";
+            emailLabel.Size = new System.Drawing.Size(35, 13);
+            emailLabel.TabIndex = 0;
+            emailLabel.Text = "Email:";
+            // 
+            // nameLabel
+            // 
+            nameLabel.AutoSize = true;
+            nameLabel.Location = new System.Drawing.Point(21, 102);
+            nameLabel.Name = "nameLabel";
+            nameLabel.Size = new System.Drawing.Size(38, 13);
+            nameLabel.TabIndex = 4;
+            nameLabel.Text = "Name:";
             // 
             // questionGroupBox2
             // 
@@ -195,19 +214,6 @@
             this.panel1.Size = new System.Drawing.Size(173, 155);
             this.panel1.TabIndex = 4;
             // 
-            // userBindingSource
-            // 
-            this.userBindingSource.DataSource = typeof(FacebookWrapper.ObjectModel.User);
-            // 
-            // emailLabel
-            // 
-            emailLabel.AutoSize = true;
-            emailLabel.Location = new System.Drawing.Point(21, 125);
-            emailLabel.Name = "emailLabel";
-            emailLabel.Size = new System.Drawing.Size(35, 13);
-            emailLabel.TabIndex = 0;
-            emailLabel.Text = "Email:";
-            // 
             // emailLabel1
             // 
             this.emailLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.userBindingSource, "Email", true));
@@ -216,6 +222,10 @@
             this.emailLabel1.Size = new System.Drawing.Size(100, 23);
             this.emailLabel1.TabIndex = 1;
             this.emailLabel1.Text = "label1";
+            // 
+            // userBindingSource
+            // 
+            this.userBindingSource.DataSource = typeof(FacebookWrapper.ObjectModel.User);
             // 
             // imageNormalPictureBox
             // 
@@ -226,15 +236,6 @@
             this.imageNormalPictureBox.TabIndex = 3;
             this.imageNormalPictureBox.TabStop = false;
             // 
-            // nameLabel
-            // 
-            nameLabel.AutoSize = true;
-            nameLabel.Location = new System.Drawing.Point(21, 102);
-            nameLabel.Name = "nameLabel";
-            nameLabel.Size = new System.Drawing.Size(38, 13);
-            nameLabel.TabIndex = 4;
-            nameLabel.Text = "Name:";
-            // 
             // nameLabel1
             // 
             this.nameLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.userBindingSource, "Name", true));
@@ -244,12 +245,22 @@
             this.nameLabel1.TabIndex = 5;
             this.nameLabel1.Text = "label1";
             // 
+            // LogedInUserLabel
+            // 
+            this.LogedInUserLabel.AutoSize = true;
+            this.LogedInUserLabel.Location = new System.Drawing.Point(12, 9);
+            this.LogedInUserLabel.Name = "LogedInUserLabel";
+            this.LogedInUserLabel.Size = new System.Drawing.Size(35, 13);
+            this.LogedInUserLabel.TabIndex = 6;
+            this.LogedInUserLabel.Text = "label1";
+            // 
             // FormQuiz
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::BasicFacebookFeatures.Properties.Resources._3551576;
             this.ClientSize = new System.Drawing.Size(578, 476);
+            this.Controls.Add(this.LogedInUserLabel);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.submitButton);
             this.Controls.Add(this.questionGroupBox1);
@@ -265,6 +276,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageNormalPictureBox)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -285,5 +297,6 @@
         private System.Windows.Forms.Label emailLabel1;
         private System.Windows.Forms.PictureBox imageNormalPictureBox;
         private System.Windows.Forms.Label nameLabel1;
+        private System.Windows.Forms.Label LogedInUserLabel;
     }
 }

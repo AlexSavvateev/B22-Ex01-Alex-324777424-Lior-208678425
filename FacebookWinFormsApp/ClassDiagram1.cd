@@ -1,52 +1,128 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
-  <Class Name="B22_Ex01_Alex_324777424_Lior_208678425.FacebookData">
-    <Position X="11" Y="0.5" Width="1.5" />
+  <Class Name="B22_Ex02_Alex_324777424_Lior_208678425.FacebookData">
+    <Position X="10.75" Y="8.25" Width="2" />
     <TypeIdentifier>
-      <HashCode>AAAAAEAAAAEAAAAAAAAgBAAAAAEEAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AgAAAEACAAEAAAAAAAAoBAAAAAEEAAAAAQAAAAAAAgA=</HashCode>
       <FileName>FacebookData.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="B22_Ex01_Alex_324777424_Lior_208678425.FacebookQuiz">
-    <Position X="13" Y="0.5" Width="1.5" />
+  <Class Name="B22_Ex02_Alex_324777424_Lior_208678425.FacebookDataFacade">
+    <Position X="12.5" Y="3.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAoQCAAAIAAAQABAAIAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>FacebookDataFacade.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="B22_Ex02_Alex_324777424_Lior_208678425.FacebookQuiz">
+    <Position X="4.75" Y="6.5" Width="2.5" />
     <TypeIdentifier>
       <HashCode>AAQBAQAAAAAACBAAAAAIAAAAAAAFIAAAAgAABAEAEAA=</HashCode>
       <FileName>FacebookQuiz.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="B22_Ex01_Alex_324777424_Lior_208678425.FacebookSearch">
-    <Position X="11.75" Y="5.75" Width="1.5" />
+  <Class Name="B22_Ex02_Alex_324777424_Lior_208678425.FacebookSearch">
+    <Position X="12.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAgAAA=</HashCode>
       <FileName>FacebookSearch.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="B22_Ex01_Alex_324777424_Lior_208678425.FormMain">
-    <Position X="4.5" Y="0.5" Width="1.5" />
+  <Class Name="B22_Ex02_Alex_324777424_Lior_208678425.FormMain">
+    <Position X="0.5" Y="0.5" Width="3" />
+    <Members>
+      <Field Name="albumsLabel" Hidden="true" />
+      <Field Name="albumsListBox" Hidden="true" />
+      <Field Name="birthDateLabel" Hidden="true" />
+      <Field Name="buttonLogin" Hidden="true" />
+      <Field Name="buttonLogout" Hidden="true" />
+      <Field Name="commentsLabel" Hidden="true" />
+      <Field Name="commentsListBox" Hidden="true" />
+      <Field Name="components" Hidden="true" />
+      <Field Name="eventsLabel" Hidden="true" />
+      <Field Name="eventsListBox" Hidden="true" />
+      <Field Name="feedListBox" Hidden="true" />
+      <Field Name="feedPictureBoxPosts" Hidden="true" />
+      <Field Name="friendsListBox" Hidden="true" />
+      <Field Name="FriendsListLabel" Hidden="true" />
+      <Field Name="genderLabel" Hidden="true" />
+      <Field Name="groupsLabel" Hidden="true" />
+      <Field Name="groupsListBox" Hidden="true" />
+      <Field Name="likedPagesLabel" Hidden="true" />
+      <Field Name="likedPagesListBox" Hidden="true" />
+      <Field Name="locationLabel" Hidden="true" />
+      <Field Name="mainLogoPictureBox" Hidden="true" />
+      <Field Name="nameLabel" Hidden="true" />
+      <Field Name="postButton" Hidden="true" />
+      <Field Name="postTextBox" Hidden="true" />
+      <Field Name="profilePictureBox" Hidden="true" />
+      <Field Name="quizButton" Hidden="true" />
+      <Field Name="searchButton" Hidden="true" />
+      <Field Name="subjectPictureBox" Hidden="true" />
+    </Members>
     <TypeIdentifier>
-      <HashCode>AQEIAUoATCQyIoAAEA2JABBaKIQAxyoCMBEAMkAAAQQ=</HashCode>
+      <HashCode>AQEIAUoATCQyIoAAEA2JABBaKIQAxyoCMBEAMkAAAwQ=</HashCode>
       <FileName>FormMain.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="B22_Ex01_Alex_324777424_Lior_208678425.FormQuiz">
-    <Position X="18" Y="0.5" Width="1.5" />
+  <Class Name="B22_Ex02_Alex_324777424_Lior_208678425.FormQuiz">
+    <Position X="15" Y="1" Width="2" />
+    <Members>
+      <Field Name="answer1RadioButtonQuestion1" Hidden="true" />
+      <Field Name="answer1RadioButtonQuestion2" Hidden="true" />
+      <Field Name="answer2RadioButtonQuestion1" Hidden="true" />
+      <Field Name="answer2RadioButtonQuestion2" Hidden="true" />
+      <Field Name="answer3RadioButtonQuestion1" Hidden="true" />
+      <Field Name="answer3RadioButtonQuestion2" Hidden="true" />
+      <Field Name="answer4RadioButtonQuestion1" Hidden="true" />
+      <Field Name="answer4RadioButtonQuestion2" Hidden="true" />
+      <Field Name="components" Hidden="true" />
+      <Field Name="emailLabel1" Hidden="true" />
+      <Field Name="imageNormalPictureBox" Hidden="true" />
+      <Field Name="LogedInUserLabel" Hidden="true" />
+      <Field Name="nameLabel1" Hidden="true" />
+      <Field Name="panel1" Hidden="true" />
+      <Field Name="questionGroupBox1" Hidden="true" />
+      <Field Name="questionGroupBox2" Hidden="true" />
+      <Field Name="submitButton" Hidden="true" />
+      <Field Name="userBindingSource" Hidden="true" />
+    </Members>
     <TypeIdentifier>
-      <HashCode>AAIAAEAAACAQBAAgRACQAEACAAAAAAAAAQAgiAAhAAg=</HashCode>
+      <HashCode>AAIAAEAAACQSBAAgRACQAEACAAAAAAAAAYAAyRAhAAg=</HashCode>
       <FileName>FormQuiz.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="B22_Ex01_Alex_324777424_Lior_208678425.FormSearch">
-    <Position X="15.5" Y="0.5" Width="1.5" />
+  <Class Name="B22_Ex02_Alex_324777424_Lior_208678425.FormSearch">
+    <Position X="8.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAASAAAABAIACAAAASABAAAAEAAAAAAAAAAAA=</HashCode>
       <FileName>FormSearch.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="B22_Ex01_Alex_324777424_Lior_208678425.Program">
-    <Position X="9.5" Y="7.75" Width="3.25" />
+  <Class Name="B22_Ex02_Alex_324777424_Lior_208678425.LoggedInUser">
+    <Position X="4.25" Y="0.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>gABAAAAAAAAAAAAAgAwJAAAAAAAAAAAAAAABAAAAAAA=</HashCode>
+      <FileName>LoggedInUser.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="B22_Ex02_Alex_324777424_Lior_208678425.Program">
+    <Position X="9.25" Y="5.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
       <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BasicFacebookFeatures.Properties.Resources">
+    <Position X="15.75" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAICABEAAAAQAAAAAAAAACAAAAEIA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BasicFacebookFeatures.Properties.Settings">
+    <Position X="11" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAABAAAAAAAAAAAAAAA=</HashCode>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />

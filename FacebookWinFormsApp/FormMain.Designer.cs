@@ -1,8 +1,8 @@
 ﻿using System;
 
-namespace B22_Ex01_Alex_324777424_Lior_208678425
+namespace B22_Ex02_Alex_324777424_Lior_208678425
 {
-    partial class FormMain
+    public partial class FormMain
     {
         /// <summary>
         /// Required designer variable.

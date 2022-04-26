@@ -5,18 +5,21 @@ using System.Linq;
 using FacebookWrapper;
 using FacebookWrapper.ObjectModel;
 
-namespace B22_Ex01_Alex_324777424_Lior_208678425
+namespace B22_Ex02_Alex_324777424_Lior_208678425
 {
     public partial class FormQuiz : Form
     {
         private readonly int r_NumberOfQuestions = 2;
         private FacebookQuiz m_FacebookQuiz = new FacebookQuiz();
         private int m_Score = 0;
+        private FacebookDataFacade m_FacebookDataFacade;
 
         public FormQuiz(User i_LoggedInUser)
         {
             InitializeComponent();
+            m_FacebookDataFacade = FacebookDataFacade.GetInstance;
             SetQuiz(i_LoggedInUser);
+            LogedInUserLabel.Text = m_FacebookDataFacade.Name;
         }
 
         private void SetQuiz(User i_User)
@@ -31,8 +34,6 @@ namespace B22_Ex01_Alex_324777424_Lior_208678425
             }
             else
             {
-                //fetchedFriendsPictureBox.Image = randomFetchedFriend.ImageNormal;
-                //fetchedFriendsPictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
                 SetGroupBoxHeadlines();
                 SetQuizQuestions(randomFetchedFriend);
                 userBindingSource.DataSource = randomFetchedFriend;
