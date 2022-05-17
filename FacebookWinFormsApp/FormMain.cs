@@ -4,7 +4,7 @@ using System.Windows.Forms;
 using FacebookWrapper;
 using FacebookWrapper.ObjectModel;
 
-namespace B22_Ex02_Alex_324777424_Lior_208678425
+namespace B22_Ex03_Alex_324777424_Lior_208678425
 {
     public partial class FormMain : Form
     {
@@ -12,11 +12,19 @@ namespace B22_Ex02_Alex_324777424_Lior_208678425
         private FacebookData m_FacebookData = new FacebookData();
         private ListBox m_SearchListBoxToPass = new ListBox();
         private FacebookDataFacade m_FacebookDataFacade;
+        private AppSettings m_AppSettings;
+        private FormExit m_FormExit = new FormExit();
 
         public FormMain()
         {
             m_FacebookDataFacade = FacebookDataFacade.GetInstance;
             InitializeComponent();
+            m_AppSettings = AppSettings.LoadFromFile();
+            this.Size = m_AppSettings.LastWindowSize;
+            this.Location = m_AppSettings.LastWindowLocation;
+            m_FormExit.m_ExitFormNotifier += exitApp;
+            m_FormExit.m_RememberChangedNotifier += () => m_AppSettings.RememberUser = m_FormExit.RememberMe;
+            m_FormExit.RememberMe = m_AppSettings.RememberUser;
             FacebookWrapper.FacebookService.s_CollectionLimit = 100;
         }
 
@@ -277,13 +285,48 @@ namespace B22_Ex02_Alex_324777424_Lior_208678425
         private void quizButton_Click(object sender, EventArgs e)
         {
             FormQuiz fromQuiz = new FormQuiz(LoggedInUser);
-            fromQuiz.ShowDialog();
+            try
+            {
+                fromQuiz.ShowDialog();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("something went wrong");
+            }
+            
         }
 
         private void searchButton_Click(object sender, EventArgs e)
         {
             FormSearch formSearch = new FormSearch(m_SearchListBoxToPass.Items);
             formSearch.ShowDialog();
+        }
+
+        private void exitApp()
+        {
+            m_AppSettings.LastWindowLocation = this.Location;
+            m_AppSettings.LastWindowSize = this.Size;
+
+            if (m_AppSettings.RememberUser)
+            {
+                m_AppSettings.LastAccessToken = m_LoggedInUserControl.AccesToken;
+            }
+            else
+            {
+                m_AppSettings.LastAccessToken = null;
+            }
+
+            m_AppSettings.SaveToFile();
+            this.Close();
+        }
+
+        protected override void OnFormClosing(FormClosingEventArgs e)
+        {
+            if (!m_FormExit.ToExit)
+            {
+                m_FormExit.ShowDialog();
+                e.Cancel = true;
+            }
         }
     }
 }

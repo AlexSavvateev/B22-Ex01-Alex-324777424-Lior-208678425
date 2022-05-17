@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using FacebookWrapper.ObjectModel;
 
-namespace B22_Ex02_Alex_324777424_Lior_208678425
+namespace B22_Ex03_Alex_324777424_Lior_208678425
 {
     public class FacebookSearch
     {
