@@ -14,6 +14,7 @@ namespace B22_Ex03_Alex_324777424_Lior_208678425
         private FacebookDataFacade m_FacebookDataFacade;
         private AppSettings m_AppSettings;
         private FormExit m_FormExit = new FormExit();
+        private ILoggedInUser LoggedUser { get; }
 
         public FormMain()
         {
@@ -133,6 +134,8 @@ namespace B22_Ex03_Alex_324777424_Lior_208678425
             postTextBox.Visible = true;
             searchButton.Visible = true;
             quizButton.Visible = true;
+            buttonFetchRandomPicture.Visible = true;
+            comboBoxSortBy.Visible = true;
         }
 
         public void VisibleAllFalse()
@@ -159,6 +162,8 @@ namespace B22_Ex03_Alex_324777424_Lior_208678425
             postTextBox.Visible = false;
             searchButton.Visible = false;
             quizButton.Visible = false;
+            buttonFetchRandomPicture.Visible = false;
+            comboBoxSortBy.Visible = false;
         }
 
         private void FeedListBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -326,6 +331,31 @@ namespace B22_Ex03_Alex_324777424_Lior_208678425
             {
                 m_FormExit.ShowDialog();
                 e.Cancel = true;
+            }
+        }
+
+        private void buttonFetchRandomPicture_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                subjectPictureBox.Image = LoggedUser.GetSelectedImage();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($@"An error occurred with the facebook API: {Environment.NewLine} {ex.Message}");
+            }
+        }
+
+        private void comboBoxSortBy_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (groupsListBox.SelectedItems.Count != 0)
+            {
+                object selectedSort = comboBoxSortBy.SelectedItem;
+                m_FacebookDataFacade.sortBy(selectedSort.ToString());
+            }
+            else
+            {
+                MessageBox.Show("An error occurred");
             }
         }
     }

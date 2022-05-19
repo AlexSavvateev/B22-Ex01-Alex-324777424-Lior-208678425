@@ -1,12 +1,14 @@
 ﻿using FacebookWrapper;
 using FacebookWrapper.ObjectModel;
+using System.Drawing;
 
 namespace B22_Ex03_Alex_324777424_Lior_208678425
 {
-    public sealed class LoggedInUser
+    public sealed class LoggedInUser : ILoggedInUser
     {
         private static User s_LoggedInUser = null;
         private LoginResult m_LoginResult;
+        private readonly PhotoSelectionAlgorithmBase r_PhotoSelectionAlgorithm = new PhotoRandomizer();
 
         public string AccesToken { get; private set; }
 
@@ -67,6 +69,11 @@ namespace B22_Ex03_Alex_324777424_Lior_208678425
         public User GetUserInstance()
         {
             return s_LoggedInUser;
+        }
+
+        public Image GetSelectedImage()
+        {
+            return r_PhotoSelectionAlgorithm.GetPhoto(s_LoggedInUser);
         }
     }
 }

@@ -58,6 +58,8 @@ namespace B22_Ex03_Alex_324777424_Lior_208678425
             this.subjectPictureBox = new System.Windows.Forms.PictureBox();
             this.quizButton = new System.Windows.Forms.Button();
             this.searchButton = new System.Windows.Forms.Button();
+            this.buttonFetchRandomPicture = new System.Windows.Forms.Button();
+            this.comboBoxSortBy = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.profilePictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mainLogoPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.feedPictureBoxPosts)).BeginInit();
@@ -152,7 +154,7 @@ namespace B22_Ex03_Alex_324777424_Lior_208678425
             this.albumsListBox.FormattingEnabled = true;
             this.albumsListBox.Location = new System.Drawing.Point(994, 176);
             this.albumsListBox.Name = "albumsListBox";
-            this.albumsListBox.Size = new System.Drawing.Size(138, 134);
+            this.albumsListBox.Size = new System.Drawing.Size(138, 108);
             this.albumsListBox.TabIndex = 59;
             this.albumsListBox.Visible = false;
             this.albumsListBox.SelectedIndexChanged += new System.EventHandler(this.albumsListBox_SelectedIndexChanged);
@@ -171,7 +173,7 @@ namespace B22_Ex03_Alex_324777424_Lior_208678425
             this.groupsListBox.FormattingEnabled = true;
             this.groupsListBox.Location = new System.Drawing.Point(994, 338);
             this.groupsListBox.Name = "groupsListBox";
-            this.groupsListBox.Size = new System.Drawing.Size(138, 147);
+            this.groupsListBox.Size = new System.Drawing.Size(138, 121);
             this.groupsListBox.TabIndex = 61;
             this.groupsListBox.Visible = false;
             this.groupsListBox.SelectedIndexChanged += new System.EventHandler(this.groupsListBox_SelectedIndexChanged);
@@ -329,7 +331,7 @@ namespace B22_Ex03_Alex_324777424_Lior_208678425
             // quizButton
             // 
             this.quizButton.Location = new System.Drawing.Point(837, 15);
-            this.quizButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.quizButton.Margin = new System.Windows.Forms.Padding(2);
             this.quizButton.Name = "quizButton";
             this.quizButton.Size = new System.Drawing.Size(138, 72);
             this.quizButton.TabIndex = 77;
@@ -341,7 +343,7 @@ namespace B22_Ex03_Alex_324777424_Lior_208678425
             // searchButton
             // 
             this.searchButton.Location = new System.Drawing.Point(994, 16);
-            this.searchButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.searchButton.Margin = new System.Windows.Forms.Padding(2);
             this.searchButton.Name = "searchButton";
             this.searchButton.Size = new System.Drawing.Size(133, 71);
             this.searchButton.TabIndex = 78;
@@ -350,11 +352,37 @@ namespace B22_Ex03_Alex_324777424_Lior_208678425
             this.searchButton.Visible = false;
             this.searchButton.Click += new System.EventHandler(this.searchButton_Click);
             // 
+            // buttonFetchRandomPicture
+            // 
+            this.buttonFetchRandomPicture.Location = new System.Drawing.Point(994, 290);
+            this.buttonFetchRandomPicture.Name = "buttonFetchRandomPicture";
+            this.buttonFetchRandomPicture.Size = new System.Drawing.Size(138, 23);
+            this.buttonFetchRandomPicture.TabIndex = 79;
+            this.buttonFetchRandomPicture.Text = "Fetch random picture";
+            this.buttonFetchRandomPicture.UseVisualStyleBackColor = true;
+            this.buttonFetchRandomPicture.Visible = false;
+            this.buttonFetchRandomPicture.Click += new System.EventHandler(this.buttonFetchRandomPicture_Click);
+            // 
+            // comboBoxSortBy
+            // 
+            this.comboBoxSortBy.FormattingEnabled = true;
+            this.comboBoxSortBy.Items.AddRange(new object[] {
+            "A-Z",
+            "Z-A"});
+            this.comboBoxSortBy.Location = new System.Drawing.Point(994, 463);
+            this.comboBoxSortBy.Name = "comboBoxSortBy";
+            this.comboBoxSortBy.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxSortBy.TabIndex = 80;
+            this.comboBoxSortBy.Visible = false;
+            this.comboBoxSortBy.SelectedIndexChanged += new System.EventHandler(this.comboBoxSortBy_SelectedIndexChanged);
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1149, 652);
+            this.Controls.Add(this.comboBoxSortBy);
+            this.Controls.Add(this.buttonFetchRandomPicture);
             this.Controls.Add(this.searchButton);
             this.Controls.Add(this.quizButton);
             this.Controls.Add(this.subjectPictureBox);
@@ -424,5 +452,7 @@ namespace B22_Ex03_Alex_324777424_Lior_208678425
         private System.Windows.Forms.PictureBox subjectPictureBox;
         private System.Windows.Forms.Button quizButton;
         private System.Windows.Forms.Button searchButton;
+        private System.Windows.Forms.Button buttonFetchRandomPicture;
+        private System.Windows.Forms.ComboBox comboBoxSortBy;
     }
 }

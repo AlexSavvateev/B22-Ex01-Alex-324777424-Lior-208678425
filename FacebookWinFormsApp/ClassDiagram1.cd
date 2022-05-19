@@ -1,129 +1,152 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
-  <Class Name="B22_Ex03_Alex_324777424_Lior_208678425.FacebookData">
-    <Position X="10.75" Y="8.25" Width="2" />
+  <Class Name="B22_Ex03_Alex_324777424_Lior_208678425.AppSettings" Collapsed="true">
+    <Position X="3" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACEAgAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAECA=</HashCode>
+      <FileName>AppSettings.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="B22_Ex03_Alex_324777424_Lior_208678425.AscendingArtistSortStrategy" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="4.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>AscendingArtistSortStrategy.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="B22_Ex03_Alex_324777424_Lior_208678425.DescendingArtistSortStrategy" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="6.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DescendingArtistSortStrategy.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="B22_Ex03_Alex_324777424_Lior_208678425.FacebookData" Collapsed="true">
+    <Position X="8.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AgAAAEACAAEAAAAAAAAoBAAAAAEEAAAAAQAAAAAAAgA=</HashCode>
       <FileName>FacebookData.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="B22_Ex03_Alex_324777424_Lior_208678425.FacebookDataFacade">
-    <Position X="12.5" Y="3.75" Width="2" />
+  <Class Name="B22_Ex03_Alex_324777424_Lior_208678425.FacebookDataFacade" Collapsed="true">
+    <Position X="3" Y="1.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAoQCAAAIAAAQABAAIAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAABAAAApQCAAAIAAAQABAAIAAAAAAAAAAAAAAA=</HashCode>
       <FileName>FacebookDataFacade.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="B22_Ex03_Alex_324777424_Lior_208678425.FacebookQuiz">
-    <Position X="4.75" Y="6.5" Width="2.5" />
+  <Class Name="B22_Ex03_Alex_324777424_Lior_208678425.FacebookQuiz" Collapsed="true">
+    <Position X="4.75" Y="1.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAQBAQAAAAAACBAAAAAIAAAAAAAFIAAAAgAABAEAEAA=</HashCode>
       <FileName>FacebookQuiz.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="B22_Ex03_Alex_324777424_Lior_208678425.FacebookSearch">
-    <Position X="12.25" Y="0.5" Width="1.5" />
+  <Class Name="B22_Ex03_Alex_324777424_Lior_208678425.FacebookSearch" Collapsed="true">
+    <Position X="6.5" Y="1.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAgAAA=</HashCode>
       <FileName>FacebookSearch.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="B22_Ex03_Alex_324777424_Lior_208678425.FormMain">
-    <Position X="0.5" Y="0.5" Width="3" />
-    <Members>
-      <Field Name="albumsLabel" Hidden="true" />
-      <Field Name="albumsListBox" Hidden="true" />
-      <Field Name="birthDateLabel" Hidden="true" />
-      <Field Name="buttonLogin" Hidden="true" />
-      <Field Name="buttonLogout" Hidden="true" />
-      <Field Name="commentsLabel" Hidden="true" />
-      <Field Name="commentsListBox" Hidden="true" />
-      <Field Name="components" Hidden="true" />
-      <Field Name="eventsLabel" Hidden="true" />
-      <Field Name="eventsListBox" Hidden="true" />
-      <Field Name="feedListBox" Hidden="true" />
-      <Field Name="feedPictureBoxPosts" Hidden="true" />
-      <Field Name="friendsListBox" Hidden="true" />
-      <Field Name="FriendsListLabel" Hidden="true" />
-      <Field Name="genderLabel" Hidden="true" />
-      <Field Name="groupsLabel" Hidden="true" />
-      <Field Name="groupsListBox" Hidden="true" />
-      <Field Name="likedPagesLabel" Hidden="true" />
-      <Field Name="likedPagesListBox" Hidden="true" />
-      <Field Name="locationLabel" Hidden="true" />
-      <Field Name="mainLogoPictureBox" Hidden="true" />
-      <Field Name="nameLabel" Hidden="true" />
-      <Field Name="postButton" Hidden="true" />
-      <Field Name="postTextBox" Hidden="true" />
-      <Field Name="profilePictureBox" Hidden="true" />
-      <Field Name="quizButton" Hidden="true" />
-      <Field Name="searchButton" Hidden="true" />
-      <Field Name="subjectPictureBox" Hidden="true" />
-    </Members>
+  <Class Name="B22_Ex03_Alex_324777424_Lior_208678425.FormExit" Collapsed="true">
+    <Position X="8.25" Y="1.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AQEIAUoATCQyIoAAEA2JABBaKIQAxyoCMBEAMkAAAwQ=</HashCode>
+      <HashCode>AAAAABAgACAEAJAAAACAABADBQAABAAAAAAAAAAgEAA=</HashCode>
+      <FileName>FormExit.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="B22_Ex03_Alex_324777424_Lior_208678425.FormMain" Collapsed="true">
+    <Position X="3" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQEYAUoATCQyIqAAEA2JABBaKMQQxyoCMBEAMkBAgwQ=</HashCode>
       <FileName>FormMain.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="B22_Ex03_Alex_324777424_Lior_208678425.FormQuiz">
-    <Position X="15" Y="1" Width="2" />
-    <Members>
-      <Field Name="answer1RadioButtonQuestion1" Hidden="true" />
-      <Field Name="answer1RadioButtonQuestion2" Hidden="true" />
-      <Field Name="answer2RadioButtonQuestion1" Hidden="true" />
-      <Field Name="answer2RadioButtonQuestion2" Hidden="true" />
-      <Field Name="answer3RadioButtonQuestion1" Hidden="true" />
-      <Field Name="answer3RadioButtonQuestion2" Hidden="true" />
-      <Field Name="answer4RadioButtonQuestion1" Hidden="true" />
-      <Field Name="answer4RadioButtonQuestion2" Hidden="true" />
-      <Field Name="components" Hidden="true" />
-      <Field Name="emailLabel1" Hidden="true" />
-      <Field Name="imageNormalPictureBox" Hidden="true" />
-      <Field Name="LogedInUserLabel" Hidden="true" />
-      <Field Name="nameLabel1" Hidden="true" />
-      <Field Name="panel1" Hidden="true" />
-      <Field Name="questionGroupBox1" Hidden="true" />
-      <Field Name="questionGroupBox2" Hidden="true" />
-      <Field Name="submitButton" Hidden="true" />
-      <Field Name="userBindingSource" Hidden="true" />
-    </Members>
+  <Class Name="B22_Ex03_Alex_324777424_Lior_208678425.FormQuiz" Collapsed="true">
+    <Position X="4.75" Y="2.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAIAAEAAACQSBAAgRACQAEACAAAAAAAAAYAAyRAhAAg=</HashCode>
       <FileName>FormQuiz.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="B22_Ex03_Alex_324777424_Lior_208678425.FormSearch">
-    <Position X="8.75" Y="0.5" Width="1.5" />
+  <Class Name="B22_Ex03_Alex_324777424_Lior_208678425.FormSearch" Collapsed="true">
+    <Position X="6.5" Y="2.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAASAAAABAIACAAAASABAAAAEAAAAAAAAAAAA=</HashCode>
       <FileName>FormSearch.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="B22_Ex03_Alex_324777424_Lior_208678425.LoggedInUser">
-    <Position X="4.25" Y="0.5" Width="2.5" />
+  <Class Name="B22_Ex03_Alex_324777424_Lior_208678425.LoggedInUser" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="8.25" Y="2.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>gABAAAAAAAAAAAAAgAwJAAAAAAAAAAAAAAABAAAAAAA=</HashCode>
+      <HashCode>gABAAAAAAAAAACAAgAwJAAAAAAAAAAAAAAABAAAAAAE=</HashCode>
       <FileName>LoggedInUser.cs</FileName>
     </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
   </Class>
-  <Class Name="B22_Ex03_Alex_324777424_Lior_208678425.Program">
-    <Position X="9.25" Y="5.25" Width="1.5" />
+  <Class Name="B22_Ex03_Alex_324777424_Lior_208678425.PhotoRandomizer" Collapsed="true">
+    <Position X="0.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>PhotoRandomizer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="B22_Ex03_Alex_324777424_Lior_208678425.PhotoSelectionAlgorithmBase" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAAAAEAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>PhotoSelectionAlgorithmBase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="B22_Ex03_Alex_324777424_Lior_208678425.Program" Collapsed="true">
+    <Position X="3" Y="3.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
       <FileName>Program.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="BasicFacebookFeatures.Properties.Resources">
-    <Position X="15.75" Y="5.25" Width="1.5" />
+  <Class Name="BasicFacebookFeatures.Properties.Resources" Collapsed="true">
+    <Position X="4.75" Y="3.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAICABEAAAAQAAAAAAAAACAAAAEIA=</HashCode>
     </TypeIdentifier>
   </Class>
-  <Class Name="BasicFacebookFeatures.Properties.Settings">
-    <Position X="11" Y="2" Width="1.5" />
+  <Class Name="BasicFacebookFeatures.Properties.Settings" Collapsed="true">
+    <Position X="6.5" Y="3.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAABAAAAAAAAAAAAAAA=</HashCode>
     </TypeIdentifier>
   </Class>
+  <Interface Name="B22_Ex03_Alex_324777424_Lior_208678425.IArtistSortStrategy" Collapsed="true">
+    <Position X="3" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>IArtistSortStrategy.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="B22_Ex03_Alex_324777424_Lior_208678425.ILoggedInUser" Collapsed="true">
+    <Position X="4.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAE=</HashCode>
+      <FileName>ILoggedInUser.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Delegate Name="B22_Ex03_Alex_324777424_Lior_208678425.ExitFormNotifyDelegate" Collapsed="true">
+    <Position X="3" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>FormExit.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="B22_Ex03_Alex_324777424_Lior_208678425.RememberMeNotifyDelegate" Collapsed="true">
+    <Position X="4.75" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>FormExit.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>

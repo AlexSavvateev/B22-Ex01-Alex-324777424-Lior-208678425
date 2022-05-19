@@ -8,6 +8,7 @@ namespace B22_Ex03_Alex_324777424_Lior_208678425
     {
         private static FacebookDataFacade s_FacebookDataFacade = null;
         private FacebookData m_FacebookData = new FacebookData();
+        private IArtistSortStrategy m_ArtistSortStrategy;
 
         private FacebookDataFacade()
         {
@@ -54,6 +55,24 @@ namespace B22_Ex03_Alex_324777424_Lior_208678425
             new Thread(() => m_FacebookData.FetchGroups(i_GroupsListBox, i_LoggedInUser, i_searchListBox)).Start();
             new Thread(() => m_FacebookData.FetchLikedPages(i_LikedPagesListBox, i_LoggedInUser, i_searchListBox)).Start();
             new Thread(() => m_FacebookData.FetchFriends(i_FriendsListBox, i_LoggedInUser, i_searchListBox)).Start();
+        }
+
+        public void sortBy(string i_SortBy)
+        {
+            setSortStrategy(i_SortBy);
+        }
+
+        private void setSortStrategy(string i_SortBy)
+        {
+            switch (i_SortBy)
+            {
+                case "A-Z":
+                    m_ArtistSortStrategy = new AscendingArtistSortStrategy();
+                    break;
+                case "Z-A":
+                    m_ArtistSortStrategy = new DescendingArtistSortStrategy();
+                    break;
+            }
         }
     }
 }

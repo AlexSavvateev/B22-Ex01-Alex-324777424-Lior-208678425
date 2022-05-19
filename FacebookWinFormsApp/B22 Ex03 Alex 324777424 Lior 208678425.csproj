@@ -90,6 +90,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AppSettings.cs" />
+    <Compile Include="AscendingArtistSortStrategy.cs" />
+    <Compile Include="DescendingArtistSortStrategy.cs" />
     <Compile Include="FacebookData.cs" />
     <Compile Include="FacebookDataFacade.cs" />
     <Compile Include="FacebookQuiz.cs" />
@@ -118,7 +120,11 @@
     <Compile Include="FormSearch.Designer.cs">
       <DependentUpon>FormSearch.cs</DependentUpon>
     </Compile>
+    <Compile Include="IArtistSortStrategy.cs" />
+    <Compile Include="ILoggedInUser.cs" />
     <Compile Include="LoggedInUser.cs" />
+    <Compile Include="PhotoRandomizer.cs" />
+    <Compile Include="PhotoSelectionAlgorithmBase.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FormExit.resx">
