@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace B22_Ex03_Alex_324777424_Lior_208678425
 {
-    public interface IArtistSortStrategy
+    public interface ICollectionSortStrategy
     {
-        void Sort(List<string> artistListToSort);
+        void Sort(List<string> collectionListToSort);
     }
 }

@@ -7,19 +7,19 @@
       <FileName>AppSettings.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="B22_Ex03_Alex_324777424_Lior_208678425.AscendingArtistSortStrategy" Collapsed="true" BaseTypeListCollapsed="true">
+  <Class Name="B22_Ex03_Alex_324777424_Lior_208678425.AscendingCollectionSortStrategy" Collapsed="true" BaseTypeListCollapsed="true">
     <Position X="4.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>AscendingArtistSortStrategy.cs</FileName>
+      <FileName>AscendingCollectionSortStrategy.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" Collapsed="true" />
   </Class>
-  <Class Name="B22_Ex03_Alex_324777424_Lior_208678425.DescendingArtistSortStrategy" Collapsed="true" BaseTypeListCollapsed="true">
+  <Class Name="B22_Ex03_Alex_324777424_Lior_208678425.DescendingCollectionSortStrategy" Collapsed="true" BaseTypeListCollapsed="true">
     <Position X="6.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>DescendingArtistSortStrategy.cs</FileName>
+      <FileName>DescendingCollectionSortStrategy.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" Collapsed="true" />
   </Class>
@@ -33,7 +33,7 @@
   <Class Name="B22_Ex03_Alex_324777424_Lior_208678425.FacebookDataFacade" Collapsed="true">
     <Position X="3" Y="1.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAABAAAApQCAAAIAAAQABAAIAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAABAAAApQCIAAIAAAQABAAIAAAAAAAAAAAAAAA=</HashCode>
       <FileName>FacebookDataFacade.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -120,11 +120,11 @@
       <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAABAAAAAAAAAAAAAAA=</HashCode>
     </TypeIdentifier>
   </Class>
-  <Interface Name="B22_Ex03_Alex_324777424_Lior_208678425.IArtistSortStrategy" Collapsed="true">
+  <Interface Name="B22_Ex03_Alex_324777424_Lior_208678425.ICollectionSortStrategy" Collapsed="true">
     <Position X="3" Y="4.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>IArtistSortStrategy.cs</FileName>
+      <FileName>ICollectionSortStrategy.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="B22_Ex03_Alex_324777424_Lior_208678425.ILoggedInUser" Collapsed="true">

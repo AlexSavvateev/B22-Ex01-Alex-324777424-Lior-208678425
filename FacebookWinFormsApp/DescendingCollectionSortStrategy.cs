@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace B22_Ex03_Alex_324777424_Lior_208678425
 {
-    public class AscendingArtistSortStrategy : IArtistSortStrategy
+    public class DescendingCollectionSortStrategy : ICollectionSortStrategy
     {
-        public void Sort(List<string> artistListToSort)
+        public void Sort(List<string> collectionListToSort)
         {
-            artistListToSort.Sort((a, b) => a.CompareTo(b));
+            collectionListToSort.Sort((a, b) => b.CompareTo(a));
         }
     }
 }

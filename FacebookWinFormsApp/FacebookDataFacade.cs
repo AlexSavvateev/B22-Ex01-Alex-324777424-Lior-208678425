@@ -8,7 +8,7 @@ namespace B22_Ex03_Alex_324777424_Lior_208678425
     {
         private static FacebookDataFacade s_FacebookDataFacade = null;
         private FacebookData m_FacebookData = new FacebookData();
-        private IArtistSortStrategy m_ArtistSortStrategy;
+        private ICollectionSortStrategy m_CollectionSortStrategy;
 
         private FacebookDataFacade()
         {
@@ -67,10 +67,10 @@ namespace B22_Ex03_Alex_324777424_Lior_208678425
             switch (i_SortBy)
             {
                 case "A-Z":
-                    m_ArtistSortStrategy = new AscendingArtistSortStrategy();
+                    m_CollectionSortStrategy = new AscendingCollectionSortStrategy();
                     break;
                 case "Z-A":
-                    m_ArtistSortStrategy = new DescendingArtistSortStrategy();
+                    m_CollectionSortStrategy = new DescendingCollectionSortStrategy();
                     break;
             }
         }
